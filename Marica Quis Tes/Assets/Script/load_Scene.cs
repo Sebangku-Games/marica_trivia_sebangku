@@ -9,4 +9,9 @@ public class load_Scene : MonoBehaviour
     {
         SceneManager.LoadScene("nama");
     }
+
+    public void SceneHome()
+    {
+        SceneManager.LoadScene("home");
+    }
 }

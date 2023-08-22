@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/nama.unity
     guid: 58a1dab68c27d5b40aa094c37feb9a62
+  - enabled: 1
+    path: Assets/Scenes/home.unity
+    guid: 5087fdf91e2c35f41a0caa25344d11c5
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 7f5eee18b5cb5c04a894d20b86786fc2, type: 2}
