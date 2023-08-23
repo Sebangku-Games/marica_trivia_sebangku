@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     private List<int> JawabansSelesai = new List<int>();
     private int currentQuestion = 0;
 
+    private IEnumerator IE_WaitTillNextRound = null;
+
     void Start()
     {
         LoadQuestiion();
@@ -25,6 +28,36 @@ public class GameManager : MonoBehaviour
         }
         Display();
     }
+
+    public void UpdateJawaban(DataJawaban newJawaban)
+    {
+        if (Pertanyaans[currentQuestion].GetTypeJawaban == Pertanyaan.TypeJawaban.Single)
+        {
+            foreach (var jawaban in JawabanPicked)
+            {
+                if(jawaban != newJawaban)
+                {
+                    jawaban.Reset();
+                }
+                JawabanPicked.Clear();
+                JawabanPicked.Add(newJawaban);
+            }
+           
+        }
+        else
+        {
+            bool alreadyPicked = JawabanPicked.Exists(x => x == newJawaban);
+            if (alreadyPicked)
+            {
+                JawabanPicked.Remove(newJawaban);
+            }
+            else
+            {
+                JawabanPicked.Add(newJawaban);
+            }
+        }
+    }
+
 
     public void HapusJawaban()
     {
@@ -44,7 +77,36 @@ public class GameManager : MonoBehaviour
     void Display()
     {
         HapusJawaban();
+        var pertanyaan = GetRandomPertanyaan();
+        if (events.UpdatePertanyaanUI != null)
+        {
+            events.UpdatePertanyaanUI(pertanyaan);
+        }
+        else { Debug.LogWarning("Ups! Something went wrong while trying to display new Question UI Data. GameEvents.UpdateQuestionUI is null. Issue occured in GameManager.Display() method."); }
 
+        
+
+    }
+
+    public void Accept()
+    {
+        bool isCorrect = CheckJawaban();
+        JawabansSelesai.Add(currentQuestion);
+
+        UpdateScore((isCorrect) ? Pertanyaans[currentQuestion].AddScore : -Pertanyaans[currentQuestion].AddScore);
+
+        if(IE_WaitTillNextRound != null)
+        {
+            StopCoroutine(IE_WaitTillNextRound);
+        }
+        IE_WaitTillNextRound = WaitTillNextRound();
+        StartCoroutine(IE_WaitTillNextRound);
+    }
+
+    IEnumerator WaitTillNextRound()
+    {
+        yield return new WaitForSeconds(GameUtility.ResolutionDelayTime);
+        Display();
     }
 
     Pertanyaan GetRandomPertanyaan()
@@ -68,6 +130,30 @@ public class GameManager : MonoBehaviour
         return random;
     }
 
+    bool CheckJawaban()
+    {
+        if (!CompareJawaban())
+        {
+            return false;
+        }
+        return true;
+    }
+
+    bool CompareJawaban()
+    {
+        if(JawabanPicked.Count > 0)
+        {
+            List<int> c = Pertanyaans[currentQuestion].GetCorrectJawaban();
+            List<int> p = JawabanPicked.Select(x => x.AnswerIndex).ToList();
+
+            var f = c.Except(p).ToList();
+            var s = p.Except(c).ToList();
+
+            return !f.Any() && !s.Any();
+        }
+        return false;
+    }
+
     void LoadQuestiion()
     {
         Object[] objs = Resources.LoadAll("Pertanyaans", typeof (Pertanyaan));
@@ -75,6 +161,16 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < objs.Length; i++)
         {
             _pertanyaans[i] = (Pertanyaan)objs[i];
+        }
+    }
+
+    public void UpdateScore(int add)
+    {
+        events.CurrentFinalScore += add;
+
+        if(events.ScoreUpdated != null)
+        {
+            events.ScoreUpdated();
         }
     }
 }
