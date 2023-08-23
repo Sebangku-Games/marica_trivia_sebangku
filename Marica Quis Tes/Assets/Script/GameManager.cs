@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         LoadQuestiion();
-
+        var seed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+        UnityEngine.Random.InitState(seed);
         foreach (var pertanyaans in Pertanyaans)
         {
             Debug.Log(pertanyaans.info);

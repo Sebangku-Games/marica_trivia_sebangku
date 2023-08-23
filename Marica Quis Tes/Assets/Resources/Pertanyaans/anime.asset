@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a676f50f59f233438d8ee3beee19104, type: 3}
-  m_Name: Valo
+  m_Name: anime
   m_EditorClassIdentifier: 
-  _info: Agent Terkuat ?
+  _info: Anime Paling Keren
   _jawaban:
-  - _info: Reyna
+  - _info: Boruto
     _jawabanBenar: 1
-  - _info: Sage
+  - _info: One Piece
     _jawabanBenar: 0
-  - _info: Cyper
+  - _info: Chainsawman
     _jawabanBenar: 0
-  - _info: Deadlock
+  - _info: OPM
     _jawabanBenar: 0
   _useTimer: 0
   _timer: 0

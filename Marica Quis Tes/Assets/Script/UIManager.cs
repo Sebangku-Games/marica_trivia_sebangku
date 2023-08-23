@@ -5,7 +5,7 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 
-[SerializeField()]
+[System.Serializable]
 public struct UIManagerParameter
 {
     [Header("Answers Options")]
@@ -13,7 +13,7 @@ public struct UIManagerParameter
     public float Margins { get { return margins; } }
 }
 
-[SerializeField()]
+[System.Serializable]
 public struct UIElements
 {
     [SerializeField] RectTransform jawabanContentArea;
@@ -35,7 +35,6 @@ public struct UIElements
     [SerializeField] TextMeshProUGUI resolutionScoreText;
     public TextMeshProUGUI ResolutionScoreText { get { return resolutionScoreText; } }
 
-    [Space]
 
     [SerializeField] TextMeshProUGUI highScoreText;
     public TextMeshProUGUI HighScoreText { get { return highScoreText; } }
@@ -45,11 +44,13 @@ public struct UIElements
 
     [SerializeField] RectTransform finishUIElements;
     public RectTransform FinishUIElements { get { return finishUIElements; } }
-
 }
 
 
-    public class UIManager : MonoBehaviour
+
+
+
+public class UIManager : MonoBehaviour
 {
     public enum ResolutionScreenType { Correct, Incorrect, Finish }
 
@@ -59,10 +60,9 @@ public struct UIElements
     [Header("UI Elements (Prefabs)")]
     [SerializeField] DataJawaban jawabanPrefab;
 
-    [SerializeField] UIElements uIElements = new UIElements();
-
     [Space]
-    [SerializeField] UIManagerParameter parameters = new UIManagerParameter();
+    [SerializeField] private UIElements elements = new UIElements();
+    [SerializeField] private UIManagerParameter parameters = new UIManagerParameter();
 
     List<DataJawaban> currentJawaban = new List<DataJawaban>();
 
@@ -78,7 +78,7 @@ public struct UIElements
 
     void UpdatePertanyaanUI(Pertanyaan pertanyaan)
     {
-        uIElements.QuestionInfoTextObject.text = pertanyaan.info;
+        elements.QuestionInfoTextObject.text = pertanyaan.info;
         //membuat jawaban
         CreateJawaban(pertanyaan);
 
@@ -91,13 +91,13 @@ public struct UIElements
         float offset = 0 - parameters.Margins;
         for (int i = 0; i < pertanyaan.Jawabans.Length; i++)
         {
-            DataJawaban newJawaban = (DataJawaban)Instantiate(jawabanPrefab, uIElements.JawabanContentArea);
+            DataJawaban newJawaban = (DataJawaban)Instantiate(jawabanPrefab, elements.JawabanContentArea);
             newJawaban.UpdateData(pertanyaan.Jawabans[i].Info, i);
 
             newJawaban.Rect.anchoredPosition = new Vector2(0, offset);
 
             offset -= (newJawaban.Rect.sizeDelta.y + parameters.Margins);
-            uIElements.JawabanContentArea.sizeDelta = new Vector2(uIElements.JawabanContentArea.sizeDelta.x, offset * -1);
+            elements.JawabanContentArea.sizeDelta = new Vector2(elements.JawabanContentArea.sizeDelta.x, offset * -1);
 
             currentJawaban.Add(newJawaban);
         }

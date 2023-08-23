@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: Matematika
   m_EditorClassIdentifier: 
   _info: 2 x 2 = ?
-  _jawaban: []
+  _jawaban:
+  - _info: 2
+    _jawabanBenar: 0
+  - _info: 3
+    _jawabanBenar: 0
+  - _info: 4
+    _jawabanBenar: 1
+  - _info: 5
+    _jawabanBenar: 0
   _useTimer: 0
   _timer: 0
   _typeJawaban: 0
