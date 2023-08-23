@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log(pertanyaans.info);
         }
-        //Display();
+        Display();
     }
 
     public void HapusJawaban()
@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour
         JawabanPicked = new List<DataJawaban>();
         var pertanyaan = GetRandomPertanyaan();
 
-        if(events.UpdateQuestionUI != null)
+        if(events.UpdatePertanyaanUI != null)
         {
-            events.UpdateQuestionUI(pertanyaan);
+            events.UpdatePertanyaanUI(pertanyaan);
         }
         else
         {

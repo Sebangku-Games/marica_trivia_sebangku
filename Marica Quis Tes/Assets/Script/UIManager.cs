@@ -57,35 +57,61 @@ public struct UIElements
     [SerializeField] GameEvent events;
 
     [Header("UI Elements (Prefabs)")]
-    [SerializeField] DataJawaban jawabans;
+    [SerializeField] DataJawaban jawabanPrefab;
 
-    [SerializeField] UIElements uIElements;
+    [SerializeField] UIElements uIElements = new UIElements();
 
     [Space]
-    [SerializeField] UIManagerParameter parameters;
+    [SerializeField] UIManagerParameter parameters = new UIManagerParameter();
 
     List<DataJawaban> currentJawaban = new List<DataJawaban>();
 
     void OnEnable()
     {
-        
+        events.UpdatePertanyaanUI += UpdatePertanyaanUI;
     }
 
     void OnDisable()
     {
-        
+        events.UpdatePertanyaanUI -= UpdatePertanyaanUI;
     }
 
     void UpdatePertanyaanUI(Pertanyaan pertanyaan)
     {
         uIElements.QuestionInfoTextObject.text = pertanyaan.info;
         //membuat jawaban
+        CreateJawaban(pertanyaan);
 
     }
 
-    void CreateJawaban()
+    void CreateJawaban(Pertanyaan pertanyaan)
     {
+        EraseJawaban();
 
+        float offset = 0 - parameters.Margins;
+        for (int i = 0; i < pertanyaan.Jawabans.Length; i++)
+        {
+            DataJawaban newJawaban = (DataJawaban)Instantiate(jawabanPrefab, uIElements.JawabanContentArea);
+            newJawaban.UpdateData(pertanyaan.Jawabans[i].Info, i);
+
+            newJawaban.Rect.anchoredPosition = new Vector2(0, offset);
+
+            offset -= (newJawaban.Rect.sizeDelta.y + parameters.Margins);
+            uIElements.JawabanContentArea.sizeDelta = new Vector2(uIElements.JawabanContentArea.sizeDelta.x, offset * -1);
+
+            currentJawaban.Add(newJawaban);
+        }
     }
+
+    void EraseJawaban()
+    {
+        foreach (var jawaban in currentJawaban)
+        {
+            Destroy(jawaban.gameObject);
+        }
+        currentJawaban.Clear();
+    }
+
+
 
 }
