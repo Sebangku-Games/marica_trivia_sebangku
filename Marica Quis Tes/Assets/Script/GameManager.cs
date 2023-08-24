@@ -17,6 +17,24 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator IE_WaitTillNextRound = null;
 
+    private bool isFinished
+    {
+        get
+        {
+            return (JawabansSelesai.Count < Pertanyaans.Length) ? false : true;
+        }
+    }
+
+    void OnEnable()
+    {
+        events.UpdateQuestionAnswer += UpdateJawaban;
+    }
+
+    void OnDisable()
+    {
+        events.UpdateQuestionAnswer -= UpdateJawaban;
+    }
+
     void Start()
     {
         LoadQuestiion();
@@ -95,7 +113,17 @@ public class GameManager : MonoBehaviour
 
         UpdateScore((isCorrect) ? Pertanyaans[currentQuestion].AddScore : -Pertanyaans[currentQuestion].AddScore);
 
-        if(IE_WaitTillNextRound != null)
+        var type
+            = (isFinished)
+            ? UIManager.ResolutionScreenType.Finish
+            : (isCorrect) ? UIManager.ResolutionScreenType.Correct
+            : UIManager.ResolutionScreenType.Incorrect;
+        if(events.displayResolutionScreen != null)
+        {
+            events.displayResolutionScreen(type, Pertanyaans[currentQuestion].AddScore);
+        }
+
+        if (IE_WaitTillNextRound != null)
         {
             StopCoroutine(IE_WaitTillNextRound);
         }

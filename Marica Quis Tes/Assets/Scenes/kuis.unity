@@ -449,7 +449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00048828125, y: 7.7702026}
+  m_AnchoredPosition: {x: 0.00048828125, y: 7.7701416}
   m_SizeDelta: {x: 0.00097656, y: 15.5446}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207954297
@@ -498,7 +498,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207954295}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -856,7 +856,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359413755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 714350783}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Accept
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &359413755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,6 +1459,7 @@ MonoBehaviour:
     jawabanContentArea: {fileID: 288477460}
     questionInfoTextObject: {fileID: 1367095824}
     scoreText: {fileID: 218524947}
+    resolutionScreenAnimator: {fileID: 207954300}
     resolutionBG: {fileID: 207954297}
     resolutionStateInfoText: {fileID: 2136136925}
     resolutionScoreText: {fileID: 370779806}
@@ -1455,6 +1468,9 @@ MonoBehaviour:
     finishUIElements: {fileID: 1845605508}
   parameters:
     margins: 15
+    correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 0}
+    incorrectBGColor: {r: 1, g: 0.18396229, b: 0.18396229, a: 0}
+    finalBGColor: {r: 0.44705883, g: 0.827451, b: 0.827451, a: 0.5254902}
 --- !u!1 &771710192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,7 +2945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20.860382, y: 0}
+  m_AnchoredPosition: {x: -20.860413, y: 0}
   m_SizeDelta: {x: 139.319, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2116861028

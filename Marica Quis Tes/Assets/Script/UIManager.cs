@@ -11,6 +11,14 @@ public struct UIManagerParameter
     [Header("Answers Options")]
     [SerializeField] float margins;
     public float Margins { get { return margins; } }
+
+    [Header("Resolution Screen Options")]
+    [SerializeField] Color correctBGColor;
+    public Color CorrectBGColor { get { return correctBGColor; } }
+    [SerializeField] Color incorrectBGColor;
+    public Color IncorrectBGColor { get { return incorrectBGColor; } }
+    [SerializeField] Color finalBGColor;
+    public Color FinalBGColor { get { return finalBGColor; } }
 }
 
 [System.Serializable]
@@ -26,6 +34,10 @@ public struct UIElements
     public TextMeshProUGUI ScoreText { get { return scoreText; } }
 
     [Space]
+
+    [SerializeField] Animator resolutionScreenAnimator;
+    public Animator ResolutionScreenAnimator { get { return resolutionScreenAnimator; } }
+
     [SerializeField] Image resolutionBG;
     public Image ResolutionBG { get { return resolutionBG; } }
 
@@ -66,14 +78,24 @@ public class UIManager : MonoBehaviour
 
     List<DataJawaban> currentJawaban = new List<DataJawaban>();
 
+    private int resStateParaHash = 0;
+    private IEnumerator IE_DisplayTimedResolution;
+
     void OnEnable()
     {
         events.UpdatePertanyaanUI += UpdatePertanyaanUI;
+        events.displayResolutionScreen += DisplayResolution;
     }
 
     void OnDisable()
     {
         events.UpdatePertanyaanUI -= UpdatePertanyaanUI;
+        events.displayResolutionScreen -= DisplayResolution;
+    }
+
+    void Start()
+    {
+        resStateParaHash = Animator.StringToHash("ScreenState");
     }
 
     void UpdatePertanyaanUI(Pertanyaan pertanyaan)
@@ -82,6 +104,74 @@ public class UIManager : MonoBehaviour
         //membuat jawaban
         CreateJawaban(pertanyaan);
 
+    }
+
+    void DisplayResolution(ResolutionScreenType type, int score)
+    {
+        UpdateResUI(type, score);
+        elements.ResolutionScreenAnimator.SetInteger(resStateParaHash, 2);
+        elements.MainCanvasGroup.blocksRaycasts = false;
+
+        if(type != ResolutionScreenType.Finish)
+        {
+            if(IE_DisplayTimedResolution != null)
+            {
+                StopCoroutine(IE_DisplayTimedResolution);
+            }
+            IE_DisplayTimedResolution = DisplayTimedResolution();
+            StartCoroutine(IE_DisplayTimedResolution);
+        }
+    }
+
+    IEnumerator DisplayTimedResolution()
+    {
+        yield return new WaitForSeconds(GameUtility.ResolutionDelayTime);
+        elements.ResolutionScreenAnimator.SetInteger(resStateParaHash, 1);
+        elements.MainCanvasGroup.blocksRaycasts = true;
+    }
+
+    void UpdateResUI(ResolutionScreenType type, int score)
+    {
+        var highscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
+        switch (type)
+        {
+            case ResolutionScreenType.Correct:
+                elements.ResolutionBG.color = parameters.CorrectBGColor;
+                elements.ResolutionStateInfoText.text = "JAWABAN BENAR!";
+                elements.ResolutionScoreText.text = "+" + score;
+                break;
+            case ResolutionScreenType.Incorrect:
+                elements.ResolutionBG.color = parameters.IncorrectBGColor;
+                elements.ResolutionStateInfoText.text = "JAWABAN SALAH";
+                elements.ResolutionScoreText.text = "-" + score;
+                break;
+            case ResolutionScreenType.Finish:
+                elements.ResolutionBG.color = parameters.FinalBGColor;
+                elements.ResolutionStateInfoText.text = "SCORE AKHIR";
+
+                StartCoroutine(CalculateScore());
+                elements.FinishUIElements.gameObject.SetActive(true);
+                elements.HighScoreText.gameObject.SetActive(true);
+                //display highscore
+
+                elements.HighScoreText.text = ((highscore > events.StartupHighscore) ? "<color=yellow>new </color>" : string.Empty) + "Highscore: " + highscore;
+                break;
+            default:
+                break;
+        }
+    }
+
+    IEnumerator CalculateScore()
+    {
+        var scoreValue = 0;
+
+        while (scoreValue < events.CurrentFinalScore)
+        {
+            scoreValue++;
+            elements.ResolutionScoreText.text = scoreValue.ToString();
+
+            yield return null;
+        }
     }
 
     void CreateJawaban(Pertanyaan pertanyaan)
