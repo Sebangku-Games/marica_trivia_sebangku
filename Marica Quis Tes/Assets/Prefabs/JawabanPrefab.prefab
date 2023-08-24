@@ -202,7 +202,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8945324550499257199}
         m_TargetAssemblyTypeName: DataJawaban, Assembly-CSharp
-        m_MethodName: SwicthState
+        m_MethodName: SwitchState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -229,7 +229,6 @@ MonoBehaviour:
   uncheckedToggle: {fileID: 21300000, guid: 2966672366848f947a57fa2cd9832791, type: 3}
   checkedToggle: {fileID: 21300000, guid: bd176cd714ce8b24cbd1b73971fdfdb4, type: 3}
   events: {fileID: 11400000, guid: a18b8080ed52a3a48b704b8b1124b4aa, type: 2}
-  Checked: 0
 --- !u!1 &8945324550954882651
 GameObject:
   m_ObjectHideFlags: 0

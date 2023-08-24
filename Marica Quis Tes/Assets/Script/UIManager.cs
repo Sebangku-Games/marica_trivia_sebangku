@@ -24,8 +24,8 @@ public struct UIManagerParameter
 [System.Serializable]
 public struct UIElements
 {
-    [SerializeField] RectTransform jawabanContentArea;
-    public RectTransform JawabanContentArea { get { return jawabanContentArea; } }
+    [SerializeField] RectTransform answersContentArea;
+    public RectTransform AnswersContentArea { get { return answersContentArea; } }
 
     [SerializeField] TextMeshProUGUI questionInfoTextObject;
     public TextMeshProUGUI QuestionInfoTextObject { get { return questionInfoTextObject; } }
@@ -47,6 +47,7 @@ public struct UIElements
     [SerializeField] TextMeshProUGUI resolutionScoreText;
     public TextMeshProUGUI ResolutionScoreText { get { return resolutionScoreText; } }
 
+    [Space]
 
     [SerializeField] TextMeshProUGUI highScoreText;
     public TextMeshProUGUI HighScoreText { get { return highScoreText; } }
@@ -64,57 +65,80 @@ public struct UIElements
 
 public class UIManager : MonoBehaviour
 {
+    #region Variables
+
     public enum ResolutionScreenType { Correct, Incorrect, Finish }
 
-    [Header("Reference")]
-    [SerializeField] GameEvent events;
+    [Header("References")]
+    [SerializeField] GameEvent events = null;
 
     [Header("UI Elements (Prefabs)")]
-    [SerializeField] DataJawaban jawabanPrefab;
+    [SerializeField] DataJawaban answerPrefab = null;
+
+    [SerializeField] UIElements uIElements = new UIElements();
 
     [Space]
-    [SerializeField] private UIElements elements = new UIElements();
-    [SerializeField] private UIManagerParameter parameters = new UIManagerParameter();
+    [SerializeField] UIManagerParameter parameters = new UIManagerParameter();
 
-    List<DataJawaban> currentJawaban = new List<DataJawaban>();
-
+    private List<DataJawaban> currentAnswers = new List<DataJawaban>();
     private int resStateParaHash = 0;
-    private IEnumerator IE_DisplayTimedResolution;
 
+    private IEnumerator IE_DisplayTimedResolution = null;
+
+    #endregion
+
+    #region Default Unity methods
+
+    /// <summary>
+    /// Function that is called when the object becomes enabled and active
+    /// </summary>
     void OnEnable()
     {
-        events.UpdatePertanyaanUI += UpdatePertanyaanUI;
-        events.displayResolutionScreen += DisplayResolution;
+        events.UpdateQuestionUI += UpdateQuestionUI;
+        events.DisplayResolutionScreen += DisplayResolution;
+        events.ScoreUpdated += UpdateScoreUI;
     }
-
+    /// <summary>
+    /// Function that is called when the behaviour becomes disabled
+    /// </summary>
     void OnDisable()
     {
-        events.UpdatePertanyaanUI -= UpdatePertanyaanUI;
-        events.displayResolutionScreen -= DisplayResolution;
+        events.UpdateQuestionUI -= UpdateQuestionUI;
+        events.DisplayResolutionScreen -= DisplayResolution;
+        events.ScoreUpdated -= UpdateScoreUI;
     }
 
+    /// <summary>
+    /// Function that is called when the script instance is being loaded.
+    /// </summary>
     void Start()
     {
+        UpdateScoreUI();
         resStateParaHash = Animator.StringToHash("ScreenState");
     }
 
-    void UpdatePertanyaanUI(Pertanyaan pertanyaan)
+    #endregion
+
+    /// <summary>
+    /// Function that is used to update new question UI information.
+    /// </summary>
+    void UpdateQuestionUI(Pertanyaan pertanyaan)
     {
-        elements.QuestionInfoTextObject.text = pertanyaan.info;
-        //membuat jawaban
-        CreateJawaban(pertanyaan);
-
+        uIElements.QuestionInfoTextObject.text = pertanyaan.Info;
+        CreateAnswers(pertanyaan);
     }
-
+    /// <summary>
+    /// Function that is used to display resolution screen.
+    /// </summary>
     void DisplayResolution(ResolutionScreenType type, int score)
     {
         UpdateResUI(type, score);
-        elements.ResolutionScreenAnimator.SetInteger(resStateParaHash, 2);
-        elements.MainCanvasGroup.blocksRaycasts = false;
+        uIElements.ResolutionScreenAnimator.SetInteger(resStateParaHash, 2);
+        uIElements.MainCanvasGroup.blocksRaycasts = false;
 
-        if(type != ResolutionScreenType.Finish)
+        if (type != ResolutionScreenType.Finish)
         {
-            if(IE_DisplayTimedResolution != null)
+            if (IE_DisplayTimedResolution != null)
             {
                 StopCoroutine(IE_DisplayTimedResolution);
             }
@@ -122,86 +146,97 @@ public class UIManager : MonoBehaviour
             StartCoroutine(IE_DisplayTimedResolution);
         }
     }
-
     IEnumerator DisplayTimedResolution()
     {
         yield return new WaitForSeconds(GameUtility.ResolutionDelayTime);
-        elements.ResolutionScreenAnimator.SetInteger(resStateParaHash, 1);
-        elements.MainCanvasGroup.blocksRaycasts = true;
+        uIElements.ResolutionScreenAnimator.SetInteger(resStateParaHash, 1);
+        uIElements.MainCanvasGroup.blocksRaycasts = true;
     }
 
+    /// <summary>
+    /// Function that is used to display resolution UI information.
+    /// </summary>
     void UpdateResUI(ResolutionScreenType type, int score)
     {
         var highscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
+
         switch (type)
         {
             case ResolutionScreenType.Correct:
-                elements.ResolutionBG.color = parameters.CorrectBGColor;
-                elements.ResolutionStateInfoText.text = "JAWABAN BENAR!";
-                elements.ResolutionScoreText.text = "+" + score;
+                uIElements.ResolutionBG.color = parameters.CorrectBGColor;
+                uIElements.ResolutionStateInfoText.text = "CORRECT!";
+                uIElements.ResolutionScoreText.text = "+" + score;
                 break;
             case ResolutionScreenType.Incorrect:
-                elements.ResolutionBG.color = parameters.IncorrectBGColor;
-                elements.ResolutionStateInfoText.text = "JAWABAN SALAH";
-                elements.ResolutionScoreText.text = "-" + score;
+                uIElements.ResolutionBG.color = parameters.IncorrectBGColor;
+                uIElements.ResolutionStateInfoText.text = "WRONG!";
+                uIElements.ResolutionScoreText.text = "-" + score;
                 break;
             case ResolutionScreenType.Finish:
-                elements.ResolutionBG.color = parameters.FinalBGColor;
-                elements.ResolutionStateInfoText.text = "SCORE AKHIR";
+                uIElements.ResolutionBG.color = parameters.FinalBGColor;
+                uIElements.ResolutionStateInfoText.text = "FINAL SCORE";
 
                 StartCoroutine(CalculateScore());
-                elements.FinishUIElements.gameObject.SetActive(true);
-                elements.HighScoreText.gameObject.SetActive(true);
-                //display highscore
-
-                elements.HighScoreText.text = ((highscore > events.StartupHighscore) ? "<color=yellow>new </color>" : string.Empty) + "Highscore: " + highscore;
-                break;
-            default:
+                uIElements.FinishUIElements.gameObject.SetActive(true);
+                uIElements.HighScoreText.gameObject.SetActive(true);
+                uIElements.HighScoreText.text = ((highscore > events.StartupHighscore) ? "<color=yellow>new </color>" : string.Empty) + "Highscore: " + highscore;
                 break;
         }
     }
 
+    /// <summary>
+    /// Function that is used to calculate and display the score.
+    /// </summary>
     IEnumerator CalculateScore()
     {
         var scoreValue = 0;
-
         while (scoreValue < events.CurrentFinalScore)
         {
             scoreValue++;
-            elements.ResolutionScoreText.text = scoreValue.ToString();
+            uIElements.ResolutionScoreText.text = scoreValue.ToString();
 
             yield return null;
         }
     }
 
-    void CreateJawaban(Pertanyaan pertanyaan)
+    /// <summary>
+    /// Function that is used to create new question answers.
+    /// </summary>
+    void CreateAnswers(Pertanyaan pertanyaan)
     {
-        EraseJawaban();
+        EraseAnswers();
 
         float offset = 0 - parameters.Margins;
-        for (int i = 0; i < pertanyaan.Jawabans.Length; i++)
+        for (int i = 0; i < pertanyaan.Answers.Length; i++)
         {
-            DataJawaban newJawaban = (DataJawaban)Instantiate(jawabanPrefab, elements.JawabanContentArea);
-            newJawaban.UpdateData(pertanyaan.Jawabans[i].Info, i);
+            DataJawaban newAnswer = (DataJawaban)Instantiate(answerPrefab, uIElements.AnswersContentArea);
+            newAnswer.UpdateData(pertanyaan.Answers[i].Info, i);
 
-            newJawaban.Rect.anchoredPosition = new Vector2(0, offset);
+            newAnswer.Rect.anchoredPosition = new Vector2(0, offset);
 
-            offset -= (newJawaban.Rect.sizeDelta.y + parameters.Margins);
-            elements.JawabanContentArea.sizeDelta = new Vector2(elements.JawabanContentArea.sizeDelta.x, offset * -1);
+            offset -= (newAnswer.Rect.sizeDelta.y + parameters.Margins);
+            uIElements.AnswersContentArea.sizeDelta = new Vector2(uIElements.AnswersContentArea.sizeDelta.x, offset * -1);
 
-            currentJawaban.Add(newJawaban);
+            currentAnswers.Add(newAnswer);
         }
     }
-
-    void EraseJawaban()
+    /// <summary>
+    /// Function that is used to erase current created answers.
+    /// </summary>
+    void EraseAnswers()
     {
-        foreach (var jawaban in currentJawaban)
+        foreach (var answer in currentAnswers)
         {
-            Destroy(jawaban.gameObject);
+            Destroy(answer.gameObject);
         }
-        currentJawaban.Clear();
+        currentAnswers.Clear();
     }
 
-
-
+    /// <summary>
+    /// Function that is used to update score text UI.
+    /// </summary>
+    void UpdateScoreUI()
+    {
+        uIElements.ScoreText.text = "Score: " + events.CurrentFinalScore;
+    }
 }

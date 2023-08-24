@@ -2,177 +2,262 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    Pertanyaan[] _pertanyaans = null;
-    public Pertanyaan[] Pertanyaans { get { return _pertanyaans;} }
+    #region Variables
 
+    private Pertanyaan[] _questions = null;
+    public Pertanyaan[] Questions { get { return _questions; } }
 
     [SerializeField] GameEvent events = null;
 
-    private List<DataJawaban> JawabanPicked = new List<DataJawaban>();
-    private List<int> JawabansSelesai = new List<int>();
+    [SerializeField] Animator timerAnimtor = null;
+    [SerializeField] TextMeshProUGUI timerText = null;
+    [SerializeField] Color timerHalfWayOutColor = Color.yellow;
+    [SerializeField] Color timerAlmostOutColor = Color.red;
+    private Color timerDefaultColor = Color.white;
+
+    private List<DataJawaban> PickedAnswers = new List<DataJawaban>();
+    private List<int> FinishedQuestions = new List<int>();
     private int currentQuestion = 0;
 
-    private IEnumerator IE_WaitTillNextRound = null;
+    private int timerStateParaHash = 0;
 
-    private bool isFinished
+    private IEnumerator IE_WaitTillNextRound = null;
+    private IEnumerator IE_StartTimer = null;
+
+    private bool IsFinished
     {
         get
         {
-            return (JawabansSelesai.Count < Pertanyaans.Length) ? false : true;
+            return (FinishedQuestions.Count < Questions.Length) ? false : true;
         }
     }
 
+    #endregion
+
+    #region Default Unity methods
+
+    /// <summary>
+    /// Function that is called when the object becomes enabled and active
+    /// </summary>
     void OnEnable()
     {
-        events.UpdateQuestionAnswer += UpdateJawaban;
+        events.UpdateQuestionAnswer += UpdateAnswers;
     }
-
+    /// <summary>
+    /// Function that is called when the behaviour becomes disabled
+    /// </summary>
     void OnDisable()
     {
-        events.UpdateQuestionAnswer -= UpdateJawaban;
+        events.UpdateQuestionAnswer -= UpdateAnswers;
     }
 
+    /// <summary>
+    /// Function that is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+    /// </summary>
+    void Awake()
+    {
+        events.CurrentFinalScore = 0;
+    }
+    /// <summary>
+    /// Function that is called when the script instance is being loaded.
+    /// </summary>
     void Start()
     {
-        LoadQuestiion();
+        events.StartupHighscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
+
+        timerDefaultColor = timerText.color;
+        LoadQuestions();
+
+        timerStateParaHash = Animator.StringToHash("TimerState");
+
         var seed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
         UnityEngine.Random.InitState(seed);
-        foreach (var pertanyaans in Pertanyaans)
-        {
-            Debug.Log(pertanyaans.info);
-        }
+
         Display();
     }
 
-    public void UpdateJawaban(DataJawaban newJawaban)
+    #endregion
+
+    /// <summary>
+    /// Function that is called to update new selected answer.
+    /// </summary>
+    public void UpdateAnswers(DataJawaban newAnswer)
     {
-        if (Pertanyaans[currentQuestion].GetTypeJawaban == Pertanyaan.TypeJawaban.Single)
+        if (Questions[currentQuestion].GetAnswerType == Pertanyaan.AnswerType.Single)
         {
-            foreach (var jawaban in JawabanPicked)
+            foreach (var answer in PickedAnswers)
             {
-                if(jawaban != newJawaban)
+                if (answer != newAnswer)
                 {
-                    jawaban.Reset();
+                    answer.Reset();
                 }
-                JawabanPicked.Clear();
-                JawabanPicked.Add(newJawaban);
             }
-           
+            PickedAnswers.Clear();
+            PickedAnswers.Add(newAnswer);
         }
         else
         {
-            bool alreadyPicked = JawabanPicked.Exists(x => x == newJawaban);
+            bool alreadyPicked = PickedAnswers.Exists(x => x == newAnswer);
             if (alreadyPicked)
             {
-                JawabanPicked.Remove(newJawaban);
+                PickedAnswers.Remove(newAnswer);
             }
             else
             {
-                JawabanPicked.Add(newJawaban);
+                PickedAnswers.Add(newAnswer);
             }
         }
     }
 
-
-    public void HapusJawaban()
+    /// <summary>
+    /// Function that is called to clear PickedAnswers list.
+    /// </summary>
+    public void EraseAnswers()
     {
-        JawabanPicked = new List<DataJawaban>();
-        var pertanyaan = GetRandomPertanyaan();
-
-        if(events.UpdatePertanyaanUI != null)
-        {
-            events.UpdatePertanyaanUI(pertanyaan);
-        }
-        else
-        {
-            Debug.LogWarning("Ups! Something went wrong while trying to display new Question UI Data. GameEvents.UpdateQuestionUI is null. Issue occured in GameManager.Display() method.");
-        }
+        PickedAnswers = new List<DataJawaban>();
     }
 
+    /// <summary>
+    /// Function that is called to display new question.
+    /// </summary>
     void Display()
     {
-        HapusJawaban();
-        var pertanyaan = GetRandomPertanyaan();
-        if (events.UpdatePertanyaanUI != null)
+        EraseAnswers();
+        var question = GetRandomQuestion();
+
+        if (events.UpdateQuestionUI != null)
         {
-            events.UpdatePertanyaanUI(pertanyaan);
+            events.UpdateQuestionUI(question);
         }
         else { Debug.LogWarning("Ups! Something went wrong while trying to display new Question UI Data. GameEvents.UpdateQuestionUI is null. Issue occured in GameManager.Display() method."); }
 
-        
-
+        if (question.UseTimer)
+        {
+            UpdateTimer(question.UseTimer);
+        }
     }
 
+    /// <summary>
+    /// Function that is called to accept picked answers and check/display the result.
+    /// </summary>
     public void Accept()
     {
-        bool isCorrect = CheckJawaban();
-        JawabansSelesai.Add(currentQuestion);
+        UpdateTimer(false);
+        bool isCorrect = CheckAnswers();
+        FinishedQuestions.Add(currentQuestion);
 
-        UpdateScore((isCorrect) ? Pertanyaans[currentQuestion].AddScore : -Pertanyaans[currentQuestion].AddScore);
+        UpdateScore((isCorrect) ? Questions[currentQuestion].AddScore : -Questions[currentQuestion].AddScore);
+
+        if (IsFinished)
+        {
+            SetHighscore();
+        }
 
         var type
-            = (isFinished)
+            = (IsFinished)
             ? UIManager.ResolutionScreenType.Finish
             : (isCorrect) ? UIManager.ResolutionScreenType.Correct
             : UIManager.ResolutionScreenType.Incorrect;
-        if(events.displayResolutionScreen != null)
+
+        if (events.DisplayResolutionScreen != null)
         {
-            events.displayResolutionScreen(type, Pertanyaans[currentQuestion].AddScore);
+            events.DisplayResolutionScreen(type, Questions[currentQuestion].AddScore);
         }
 
-        if (IE_WaitTillNextRound != null)
+        AudioManager.Instance.PlaySound((isCorrect) ? "CorrectSFX" : "IncorrectSFX");
+
+        if (type != UIManager.ResolutionScreenType.Finish)
         {
-            StopCoroutine(IE_WaitTillNextRound);
+            if (IE_WaitTillNextRound != null)
+            {
+                StopCoroutine(IE_WaitTillNextRound);
+            }
+            IE_WaitTillNextRound = WaitTillNextRound();
+            StartCoroutine(IE_WaitTillNextRound);
         }
-        IE_WaitTillNextRound = WaitTillNextRound();
-        StartCoroutine(IE_WaitTillNextRound);
     }
 
+    #region Timer Methods
+
+    void UpdateTimer(bool state)
+    {
+        switch (state)
+        {
+            case true:
+                IE_StartTimer = StartTimer();
+                StartCoroutine(IE_StartTimer);
+
+                timerAnimtor.SetInteger(timerStateParaHash, 2);
+                break;
+            case false:
+                if (IE_StartTimer != null)
+                {
+                    StopCoroutine(IE_StartTimer);
+                }
+
+                timerAnimtor.SetInteger(timerStateParaHash, 1);
+                break;
+        }
+    }
+    IEnumerator StartTimer()
+    {
+        var totalTime = Questions[currentQuestion].Timer;
+        var timeLeft = totalTime;
+
+        timerText.color = timerDefaultColor;
+        while (timeLeft > 0)
+        {
+            timeLeft--;
+
+            AudioManager.Instance.PlaySound("CountdownSFX");
+
+            if (timeLeft < totalTime / 2 && timeLeft > totalTime / 4)
+            {
+                timerText.color = timerHalfWayOutColor;
+            }
+            if (timeLeft < totalTime / 4)
+            {
+                timerText.color = timerAlmostOutColor;
+            }
+
+            timerText.text = timeLeft.ToString();
+            yield return new WaitForSeconds(1.0f);
+        }
+        Accept();
+    }
     IEnumerator WaitTillNextRound()
     {
         yield return new WaitForSeconds(GameUtility.ResolutionDelayTime);
         Display();
     }
 
-    Pertanyaan GetRandomPertanyaan()
-    {
-        var randomIndex = GetRandomPertanyaanIndex();
-        currentQuestion = randomIndex;
+    #endregion
 
-        return Pertanyaans[currentQuestion];
-
-    }
-    int GetRandomPertanyaanIndex()
+    /// <summary>
+    /// Function that is called to check currently picked answers and return the result.
+    /// </summary>
+    bool CheckAnswers()
     {
-        var random = 0;
-        if (JawabansSelesai.Count < Pertanyaans.Length)
-        {
-            do
-            {
-                random = UnityEngine.Random.Range(0, Pertanyaans.Length);
-            } while (JawabansSelesai.Contains(random) || random == currentQuestion);
-        }
-        return random;
-    }
-
-    bool CheckJawaban()
-    {
-        if (!CompareJawaban())
+        if (!CompareAnswers())
         {
             return false;
         }
         return true;
     }
-
-    bool CompareJawaban()
+    /// <summary>
+    /// Function that is called to compare picked answers with question correct answers.
+    /// </summary>
+    bool CompareAnswers()
     {
-        if(JawabanPicked.Count > 0)
+        if (PickedAnswers.Count > 0)
         {
-            List<int> c = Pertanyaans[currentQuestion].GetCorrectJawaban();
-            List<int> p = JawabanPicked.Select(x => x.AnswerIndex).ToList();
+            List<int> c = Questions[currentQuestion].GetCorrectAnswers();
+            List<int> p = PickedAnswers.Select(x => x.AnswerIndex).ToList();
 
             var f = c.Except(p).ToList();
             var s = p.Except(c).ToList();
@@ -182,23 +267,79 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    void LoadQuestiion()
+    /// <summary>
+    /// Function that is called to load all questions from the Resource folder.
+    /// </summary>
+    void LoadQuestions()
     {
-        Object[] objs = Resources.LoadAll("Pertanyaans", typeof (Pertanyaan));
-        _pertanyaans = new Pertanyaan[objs.Length];
+        Object[] objs = Resources.LoadAll("Pertanyaans", typeof(Pertanyaan));
+        _questions = new Pertanyaan[objs.Length];
         for (int i = 0; i < objs.Length; i++)
         {
-            _pertanyaans[i] = (Pertanyaan)objs[i];
+            _questions[i] = (Pertanyaan)objs[i];
         }
     }
 
-    public void UpdateScore(int add)
+    /// <summary>
+    /// Function that is called restart the game.
+    /// </summary>
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    /// <summary>
+    /// Function that is called to quit the application.
+    /// </summary>
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    /// <summary>
+    /// Function that is called to set new highscore if game score is higher.
+    /// </summary>
+    private void SetHighscore()
+    {
+        var highscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
+        if (highscore < events.CurrentFinalScore)
+        {
+            PlayerPrefs.SetInt(GameUtility.SavePrefKey, events.CurrentFinalScore);
+        }
+    }
+    /// <summary>
+    /// Function that is called update the score and update the UI.
+    /// </summary>
+    private void UpdateScore(int add)
     {
         events.CurrentFinalScore += add;
 
-        if(events.ScoreUpdated != null)
+        if (events.ScoreUpdated != null)
         {
             events.ScoreUpdated();
         }
     }
+
+    #region Getters
+
+    Pertanyaan GetRandomQuestion()
+    {
+        var randomIndex = GetRandomQuestionIndex();
+        currentQuestion = randomIndex;
+
+        return Questions[currentQuestion];
+    }
+    int GetRandomQuestionIndex()
+    {
+        var random = 0;
+        if (FinishedQuestions.Count < Questions.Length)
+        {
+            do
+            {
+                random = UnityEngine.Random.Range(0, Questions.Length);
+            } while (FinishedQuestions.Contains(random) || random == currentQuestion);
+        }
+        return random;
+    }
+
+    #endregion
 }

@@ -8,21 +8,21 @@ public struct Jawaban
     [SerializeField] private string _info;
     public string Info { get { return _info; } }
 
-    [SerializeField] private bool _jawabanBenar;
-    public bool JawabanBenar { get { return _jawabanBenar; } }
+    [SerializeField] private bool _isCorrect;
+    public bool IsCorrect { get { return _isCorrect; } }
 }
 [CreateAssetMenu(fileName = "Pertanyaan Baru", menuName = "Quiz/Pertanyaan Baru")]
 public class Pertanyaan : ScriptableObject
 {
-    public enum TypeJawaban { Multi, Single }
+    public enum AnswerType { Multi, Single }
 
     [SerializeField] private string _info = string.Empty;
-    public string info { get { return _info; } }
+    public string Info { get { return _info; } }
 
-    [SerializeField] Jawaban[] _jawaban = null;
-    public Jawaban[] Jawabans { get { return _jawaban; } }
+    [SerializeField] Jawaban[] _answers = null;
+    public Jawaban[] Answers { get { return _answers; } }
 
-    //parameters
+    //Parameters
 
     [SerializeField] private bool _useTimer = false;
     public bool UseTimer { get { return _useTimer; } }
@@ -30,22 +30,25 @@ public class Pertanyaan : ScriptableObject
     [SerializeField] private int _timer = 0;
     public int Timer { get { return _timer; } }
 
-    [SerializeField] private TypeJawaban _typeJawaban = TypeJawaban.Multi;
-    public TypeJawaban GetTypeJawaban { get { return _typeJawaban; } }
+    [SerializeField] private AnswerType _answerType = AnswerType.Multi;
+    public AnswerType GetAnswerType { get { return _answerType; } }
 
     [SerializeField] private int _addScore = 10;
     public int AddScore { get { return _addScore; } }
 
-    public List<int> GetCorrectJawaban()
+    /// <summary>
+    /// Function that is called to collect and return correct answers indexes.
+    /// </summary>
+    public List<int> GetCorrectAnswers()
     {
-        List<int> CorrectJawaban = new List<int>();
-        for (int i = 0; i > Jawabans.Length; i++)
+        List<int> CorrectAnswers = new List<int>();
+        for (int i = 0; i < Answers.Length; i++)
         {
-            if (Jawabans[i].JawabanBenar)
+            if (Answers[i].IsCorrect)
             {
-                CorrectJawaban.Add(i);
+                CorrectAnswers.Add(i);
             }
         }
-        return CorrectJawaban;
+        return CorrectAnswers;
     }
 }

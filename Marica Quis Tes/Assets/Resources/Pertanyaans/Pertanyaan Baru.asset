@@ -10,19 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a676f50f59f233438d8ee3beee19104, type: 3}
-  m_Name: Valo
+  m_Name: Pertanyaan Baru
   m_EditorClassIdentifier: 
-  _info: Agent Terkuat ?
-  _jawaban:
-  - _info: Reyna
-    _jawabanBenar: 1
-  - _info: Sage
-    _jawabanBenar: 0
-  - _info: Cyper
-    _jawabanBenar: 0
-  - _info: Deadlock
-    _jawabanBenar: 0
+  _info: Siapa pacar Zeta
+  _answers:
+  - _info: Aku
+    _isCorrect: 1
+  - _info: Bang Al
+    _isCorrect: 0
   _useTimer: 0
   _timer: 0
-  _typeJawaban: 0
+  _answerType: 0
   _addScore: 10
