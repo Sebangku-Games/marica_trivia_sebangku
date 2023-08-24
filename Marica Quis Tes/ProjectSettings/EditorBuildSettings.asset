@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/home.unity
     guid: 5087fdf91e2c35f41a0caa25344d11c5
+  - enabled: 1
+    path: Assets/Scenes/kuis.unity
+    guid: 10306954a6732a84381c1af27b7f1f93
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 7f5eee18b5cb5c04a894d20b86786fc2, type: 2}

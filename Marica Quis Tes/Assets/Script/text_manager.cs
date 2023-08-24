@@ -8,17 +8,26 @@ public class text_manager : MonoBehaviour
     public static text_manager instance; // Membuat instance yang dapat diakses dari semua scene
     public string storedText; // Variabel untuk menyimpan teks
 
-    public InputField input_field;
-                              
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Tetapkan objek ini ketika berpindah scene
+        }
+        else
+        {
+            Destroy(gameObject); // Hancurkan objek jika instance sudah ada
+        }
+    }
 
     public void StoreText(string text)
     {
-        string inputText = input_field.text;
-        PlayerPrefs.SetString("StoredText", inputText);
+        storedText = text; // Simpan teks dari InputField
     }
 
     public string GetStoredText()
     {
-        return PlayerPrefs.GetString("StoredText", "");
+        return storedText; // Ambil teks yang disimpan
     }
 }
