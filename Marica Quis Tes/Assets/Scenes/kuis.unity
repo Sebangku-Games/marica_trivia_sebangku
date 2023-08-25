@@ -148,7 +148,7 @@ RectTransform:
   m_GameObject: {fileID: 3209069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3050001, y: 1.4625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1486765315}
@@ -580,7 +580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.7, y: 2.3}
+  m_AnchoredPosition: {x: -7.9, y: 2.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218524947
@@ -754,8 +754,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.36084, y: -13.813599}
-  m_SizeDelta: {x: -576.3239, y: -27.6268}
+  m_AnchoredPosition: {x: -3.8599854, y: -13.813599}
+  m_SizeDelta: {x: -537.321, y: -27.627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295829253
 MonoBehaviour:
@@ -1283,7 +1283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -399.1449, y: -97}
+  m_AnchoredPosition: {x: -355, y: -97}
   m_SizeDelta: {x: 114.17279, y: 103.53003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643049429
@@ -1334,6 +1334,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 714350783}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: TogglePauseButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1428,6 +1440,7 @@ GameObject:
   - component: {fileID: 714350784}
   - component: {fileID: 714350783}
   - component: {fileID: 714350785}
+  - component: {fileID: 714350786}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1497,6 +1510,18 @@ MonoBehaviour:
     correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 1}
     incorrectBGColor: {r: 1, g: 0.18396229, b: 0.18396229, a: 0}
     finalBGColor: {r: 0.44705883, g: 0.827451, b: 0.827451, a: 0.5254902}
+--- !u!114 &714350786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714350781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017b080aa6461cd499ddc2ed6256f0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &771710192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,7 +1719,7 @@ MonoBehaviour:
   - name: CountdownSFX
     clip: {fileID: 8300000, guid: 20f8537e455b1a945a15ba1a454c7517, type: 3}
     parameters:
-      Volume: 0.413
+      Volume: 0
       Pitch: 0.06
       Loop: 0
     Source: {fileID: 0}
@@ -2006,7 +2031,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1186439674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 714350786}
+        m_TargetAssemblyTypeName: load_Scene, Assembly-CSharp
+        m_MethodName: SceneHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1186439674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2127,7 +2164,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1316713571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1845605509}
+        m_TargetAssemblyTypeName: load_Scene, Assembly-CSharp
+        m_MethodName: scene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: home
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1316713571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2330,7 +2379,7 @@ RectTransform:
   m_GameObject: {fileID: 1486765314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0375, y: 1.025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1728379524}
@@ -2648,7 +2697,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 720, y: 1280}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -2734,7 +2783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 434.4211, y: -78.22695}
+  m_AnchoredPosition: {x: 409.5, y: -78.22695}
   m_SizeDelta: {x: 169.6648, y: 49.205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728379525
@@ -2870,6 +2919,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 714350783}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1759288693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2960,7 +3021,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 720, y: 1280}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -3031,6 +3092,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1845605508}
+  - component: {fileID: 1845605509}
   m_Layer: 5
   m_Name: GameFinishElement
   m_TagString: Untagged
@@ -3061,6 +3123,18 @@ RectTransform:
   m_AnchoredPosition: {x: -20.860413, y: 0}
   m_SizeDelta: {x: 139.319, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1845605509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845605507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017b080aa6461cd499ddc2ed6256f0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2116861028
 GameObject:
   m_ObjectHideFlags: 0

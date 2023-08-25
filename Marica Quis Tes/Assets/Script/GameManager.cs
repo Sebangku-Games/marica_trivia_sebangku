@@ -4,10 +4,13 @@ using UnityEngine;
 using System.Linq;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     #region Variables
+
+    private bool isPaused = false;
 
     private Pertanyaan[] _questions = null;
     public Pertanyaan[] Questions { get { return _questions; } }
@@ -28,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator IE_WaitTillNextRound = null;
     private IEnumerator IE_StartTimer = null;
-
+    public event Action <bool> GamePaused;
     private bool IsFinished
     {
         get
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Start()
     {
+        GamePaused += TogglePause;
         events.StartupHighscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
 
         timerDefaultColor = timerText.color;
@@ -111,6 +115,41 @@ public class GameManager : MonoBehaviour
             {
                 PickedAnswers.Add(newAnswer);
             }
+        }
+    }
+
+    private void TogglePause(bool pause)
+    {
+        isPaused = pause;
+        if (isPaused)
+        {
+            // Jika permainan dijeda, hentikan timer
+            UpdateTimer(false);
+            // Mungkin Anda ingin menampilkan UI jeda di sini
+        }
+        else
+        {
+            // Jika permainan dilanjutkan, aktifkan kembali timer
+            UpdateTimer(true);
+            // Mungkin Anda ingin menyembunyikan UI jeda di sini
+        }
+    }
+
+    public void TogglePauseButton()
+    {
+        if (GamePaused != null)
+        {
+            // Jika tombol pause ditekan, kirim status jeda terbalik
+            GamePaused(!isPaused);
+        }
+    }
+
+    public void ResumeGame()
+    {
+        if (GamePaused != null)
+        {
+            // Jika tombol resume ditekan, kirim status jeda sebagai false
+            GamePaused(false);
         }
     }
 
@@ -272,7 +311,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void LoadQuestions()
     {
-        Object[] objs = Resources.LoadAll("Pertanyaans", typeof(Pertanyaan));
+        System.Object[] objs = Resources.LoadAll("Pertanyaans", typeof(Pertanyaan));
         _questions = new Pertanyaan[objs.Length];
         for (int i = 0; i < objs.Length; i++)
         {
