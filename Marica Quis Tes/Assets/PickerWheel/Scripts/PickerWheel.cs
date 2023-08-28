@@ -146,7 +146,7 @@ namespace EasyUI.PickerWheelUI {
             bool isIndicatorOnTheLine = false ;
 
             wheelCircle
-            .DORotate (targetRotation, spinDuration, RotateMode.Fast)
+            .DORotate (targetRotation, spinDuration, RotateMode.FastBeyond360)
             .SetEase (Ease.InOutQuart)
             .OnUpdate (() => {
                float diff = Mathf.Abs (prevAngle - currentAngle) ;
