@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Marica Trivia v.0.0.1
+  companyName: Marica Trivia v.0.0.2
   productName: Marica Quis Tes
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}

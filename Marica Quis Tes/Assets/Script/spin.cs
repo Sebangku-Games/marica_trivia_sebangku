@@ -9,6 +9,8 @@ public class spin : MonoBehaviour
 {
     [SerializeField] private Button uiSpinButton;
     [SerializeField] private TextMeshProUGUI uiSpinText;
+    [SerializeField] private GameObject popUp;
+    [SerializeField] private TextMeshProUGUI labelGet;
 
     [SerializeField] private PickerWheel pickerWheel;
     // Start is called before the first frame update
@@ -16,7 +18,23 @@ public class spin : MonoBehaviour
     {
         uiSpinButton.onClick.AddListener(() =>
         {
+            uiSpinButton.interactable = false;
             uiSpinText.text = "Spinning!";
+
+            pickerWheel.OnSpinStart(() =>
+            {
+                Debug.Log("Spin Started");
+            });
+
+            pickerWheel.OnSpinEnd(wheelPiece =>
+            {
+                Debug.Log("Spin End: " + wheelPiece.Label + ", Amount " + wheelPiece.Amount);
+                popUp.SetActive(true);
+                labelGet.text = (wheelPiece.Label);
+                uiSpinButton.interactable = true;
+                uiSpinText.text = "Spin Again!";
+            });
+
             pickerWheel.Spin();
         });
     }

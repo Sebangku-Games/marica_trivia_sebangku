@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/books.unity
     guid: b9fd12f28ab521340852251f40b95e54
+  - enabled: 1
+    path: Assets/Scenes/spinBooks.unity
+    guid: 4850a37ba0891ef47ab32ce9ae22f6c3
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 7f5eee18b5cb5c04a894d20b86786fc2, type: 2}
