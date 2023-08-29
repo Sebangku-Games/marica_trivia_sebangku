@@ -253,6 +253,11 @@ public class UIManager : MonoBehaviour
 
     public void AddTimeAndUpdateCurrentTime()
     {
+        float additionalTime = 30f;
+        gameManager.UpdateTimer(false);
+        // Tambah waktu sebanyak 30 detik
+        gameManager.UpdateTimer(true, additionalTime);
+=======
         float additionalTime = 20f; // Waktu tambahan yang ingin ditambahkan
 
         // Dapatkan waktu sebelumnya yang tersisa dalam timer
