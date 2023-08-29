@@ -267,11 +267,6 @@ public class UIManager : MonoBehaviour
         // Update UI skor
         UpdateScoreUI();
     }
-
-
-
-
-
 }
 
 
