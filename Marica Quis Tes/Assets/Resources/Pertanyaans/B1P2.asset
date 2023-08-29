@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a676f50f59f233438d8ee3beee19104, type: 3}
-  m_Name: nomor2
+  m_Name: B1P2
   m_EditorClassIdentifier: 
-  _info: Zeta atau Kobo
+  _info: "Euro memiliki lambang yang sering digunakan di depan nominal. Lambang tersebut
+    adalah\u2026"
   _answers:
-  - _info: Zeta
+  - _info: Rp.
+    _isCorrect: 0
+  - _info: $
+    _isCorrect: 0
+  - _info: "\u20AC"
     _isCorrect: 1
-  - _info: Kobo
+  - _info: "\xA5"
     _isCorrect: 0
   _useTimer: 1
   _timer: 20
-  _answerType: 0
+  _answerType: 1
   _addScore: 10

@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
 {
     #region Variables
 
+    private float previousTime = 0.0f;
+    private bool isTimerRunning = false;
+
+
     private bool isPaused = false;
 
     private Pertanyaan[] _questions = null;
@@ -141,7 +145,25 @@ public class GameManager : MonoBehaviour
         {
             // Jika tombol pause ditekan, kirim status jeda terbalik
             GamePaused(!isPaused);
+
+            if (isPaused)
+            {
+                if (isTimerRunning)
+                {
+                    UpdateTimer(false);
+                    previousTime = float.Parse(timerText.text);
+                }
+            }
+            else
+            {
+                if (isTimerRunning)
+                {
+                    UpdateTimer(true);
+                    StartCoroutine(IE_StartTimer); // Lanjutkan timer yang dihentikan sebelumnya
+                }
+            }
         }
+
     }
 
     public void ResumeGame()
@@ -245,8 +267,10 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator StartTimer()
     {
+        isTimerRunning = true;
         var totalTime = Questions[currentQuestion].Timer;
-        var timeLeft = totalTime;
+        //var timeLeft = totalTime;
+        var timeLeft = (previousTime > 0.0f) ? previousTime : totalTime;
 
         timerText.color = timerDefaultColor;
         while (timeLeft > 0)
@@ -267,6 +291,7 @@ public class GameManager : MonoBehaviour
             timerText.text = timeLeft.ToString();
             yield return new WaitForSeconds(1.0f);
         }
+        isTimerRunning = false;
         Accept();
     }
     IEnumerator WaitTillNextRound()

@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a676f50f59f233438d8ee3beee19104, type: 3}
-  m_Name: Pertanyaan Baru
+  m_Name: B1P13
   m_EditorClassIdentifier: 
-  _info: Siapa pacar Zeta
+  _info: "Lembaga untuk menabung uang, meminjam uang, dan mengatur segala bentuk 
+    keuangan di negara disebut\u2026"
   _answers:
-  - _info: Aku
+  - _info: Koperasi
+    _isCorrect: 0
+  - _info: Bank
     _isCorrect: 1
-  - _info: Bang Al
+  - _info: BPK
+    _isCorrect: 0
+  - _info: DPR
     _isCorrect: 0
   _useTimer: 1
-  _timer: 20
-  _answerType: 0
+  _timer: 30
+  _answerType: 1
   _addScore: 10

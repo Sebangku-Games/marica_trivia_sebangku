@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a676f50f59f233438d8ee3beee19104, type: 3}
+  m_Name: B1P14
+  m_EditorClassIdentifier: 
+  _info: "Pada saat terjadi inflasi, nilai tukar Rupiah pada 1 US Dollar adalah\u2026"
+  _answers:
+  - _info: Rp 11.200
+    _isCorrect: 1
+  - _info: Rp 11.300
+    _isCorrect: 0
+  - _info: Rp 12.100
+    _isCorrect: 0
+  - _info: Rp 12.200
+    _isCorrect: 0
+  _useTimer: 1
+  _timer: 30
+  _answerType: 1
+  _addScore: 10

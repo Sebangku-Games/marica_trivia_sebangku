@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a676f50f59f233438d8ee3beee19104, type: 3}
-  m_Name: nomor1
+  m_Name: B1P9
   m_EditorClassIdentifier: 
-  _info: 1 + 1 = ?
+  _info: "Sistem transaksi tukar menukar barang disebut\u2026"
   _answers:
-  - _info: 2
-    _isCorrect: 1
-  - _info: 3
+  - _info: Menabung
     _isCorrect: 0
-  - _info: 4
+  - _info: Ritel
+    _isCorrect: 0
+  - _info: Barter
+    _isCorrect: 1
+  - _info: Kredit
     _isCorrect: 0
   _useTimer: 1
-  _timer: 20
-  _answerType: 0
+  _timer: 30
+  _answerType: 1
   _addScore: 10
