@@ -35,8 +35,6 @@ public class DataJawaban : MonoBehaviour
     private int _answerIndex = -1;
     public int AnswerIndex { get { return _answerIndex; } }
 
-    public bool IsCorrect { get; internal set; }
-
     private bool Checked = false;
 
     #endregion
