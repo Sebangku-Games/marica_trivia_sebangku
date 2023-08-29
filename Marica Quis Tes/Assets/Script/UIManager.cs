@@ -5,6 +5,7 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 
+
 [System.Serializable]
 public struct UIManagerParameter
 {
@@ -57,6 +58,9 @@ public struct UIElements
 
     [SerializeField] RectTransform finishUIElements;
     public RectTransform FinishUIElements { get { return finishUIElements; } }
+
+    [SerializeField] RectTransform hintButton;
+    public RectTransform HintButton { get { return hintButton; } }
 }
 
 
@@ -65,7 +69,12 @@ public struct UIElements
 
 public class UIManager : MonoBehaviour
 {
+
+
     #region Variables
+
+
+    public GameManager gameManager;
 
     public enum ResolutionScreenType { Correct, Incorrect, Finish }
 
@@ -115,6 +124,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateScoreUI();
         resStateParaHash = Animator.StringToHash("ScreenState");
+        
     }
 
     #endregion
@@ -124,6 +134,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     void UpdateQuestionUI(Pertanyaan pertanyaan)
     {
+        
         uIElements.QuestionInfoTextObject.text = pertanyaan.Info;
         CreateAnswers(pertanyaan);
     }
@@ -239,4 +250,31 @@ public class UIManager : MonoBehaviour
     {
         uIElements.ScoreText.text = "Score: " + events.CurrentFinalScore;
     }
+
+    public void AddTimeAndReduceScore()
+    {
+        float additionalTime = 30f;
+        // Tambah waktu sebanyak 30 detik
+        gameManager.UpdateTimer(true, additionalTime);
+
+        // Kurangi skor sebanyak 10
+        events.CurrentFinalScore -= 10;
+
+        // Update UI skor
+        UpdateScoreUI();
+    }
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
