@@ -10,14 +10,18 @@ public class GameManager : MonoBehaviour
 {
     #region Variables
 
+    public UIElements uIElemets; // Reference to the UIManager script
+
     private float previousTime = 0.0f;
     private bool isTimerRunning = false;
 
-
+    
     private bool isPaused = false;
 
     private Pertanyaan[] _questions = null;
     public Pertanyaan[] Questions { get { return _questions; } }
+    private List<DataJawaban> currentAnswers = new List<DataJawaban>();
+
 
     [SerializeField] GameEvent events = null;
 
@@ -36,6 +40,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator IE_WaitTillNextRound = null;
     private IEnumerator IE_StartTimer = null;
     public event Action <bool> GamePaused;
+
+    //private List<DataJawaban> currentAnswers = new List<DataJawaban>();
+
     private bool IsFinished
     {
         get
@@ -75,6 +82,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Start()
     {
+        //uIElemets = GetComponent<UIElements>();
         GamePaused += TogglePause;
         events.StartupHighscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
 
@@ -197,6 +205,9 @@ public class GameManager : MonoBehaviour
         }
         else { Debug.LogWarning("Ups! Something went wrong while trying to display new Question UI Data. GameEvents.UpdateQuestionUI is null. Issue occured in GameManager.Display() method."); }
 
+        // Panggil ShowHintButton setelah menampilkan pertanyaan
+        //uIElemets.HintButton.GetComponent<hintButton>().ShowHintButton();
+
         if (question.UseTimer)
         {
             UpdateTimer(question.UseTimer);
@@ -245,12 +256,12 @@ public class GameManager : MonoBehaviour
 
     #region Timer Methods
 
-    void UpdateTimer(bool state)
+    public void UpdateTimer(bool state, float timeToAdd = 0)
     {
         switch (state)
         {
             case true:
-                IE_StartTimer = StartTimer();
+                IE_StartTimer = StartTimer(timeToAdd);
                 StartCoroutine(IE_StartTimer);
 
                 timerAnimtor.SetInteger(timerStateParaHash, 2);
@@ -264,10 +275,13 @@ public class GameManager : MonoBehaviour
                 timerAnimtor.SetInteger(timerStateParaHash, 1);
                 break;
         }
+
     }
-    IEnumerator StartTimer()
+    IEnumerator StartTimer(float timeToAdd)
     {
         isTimerRunning = true;
+        // Simpan waktu awal
+        //var timeLeft = originalTime;
         var totalTime = Questions[currentQuestion].Timer;
         //var timeLeft = totalTime;
         var timeLeft = (previousTime > 0.0f) ? previousTime : totalTime;
@@ -287,6 +301,7 @@ public class GameManager : MonoBehaviour
             {
                 timerText.color = timerAlmostOutColor;
             }
+            Debug.Log("Time Left : "+ timeLeft);
 
             timerText.text = timeLeft.ToString();
             yield return new WaitForSeconds(1.0f);
@@ -405,5 +420,16 @@ public class GameManager : MonoBehaviour
         return random;
     }
 
-    #endregion
+    
+
+
+
+
 }
+
+
+
+
+
+    #endregion
+
