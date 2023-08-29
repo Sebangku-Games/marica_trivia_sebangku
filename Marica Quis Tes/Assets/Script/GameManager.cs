@@ -14,8 +14,9 @@ public class GameManager : MonoBehaviour
 
     private float previousTime = 0.0f;
     private bool isTimerRunning = false;
-
     
+
+
     private bool isPaused = false;
 
     private Pertanyaan[] _questions = null;
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameEvent events = null;
 
     [SerializeField] Animator timerAnimtor = null;
-    [SerializeField] TextMeshProUGUI timerText = null;
+    [SerializeField] public TextMeshProUGUI timerText = null;
     [SerializeField] Color timerHalfWayOutColor = Color.yellow;
     [SerializeField] Color timerAlmostOutColor = Color.red;
     private Color timerDefaultColor = Color.white;
@@ -256,12 +257,13 @@ public class GameManager : MonoBehaviour
 
     #region Timer Methods
 
-    public void UpdateTimer(bool state, float timeToAdd = 0)
+    public void UpdateTimer(bool state)
+
     {
         switch (state)
         {
             case true:
-                IE_StartTimer = StartTimer(timeToAdd);
+                IE_StartTimer = StartTimer();
                 StartCoroutine(IE_StartTimer);
 
                 timerAnimtor.SetInteger(timerStateParaHash, 2);
@@ -277,7 +279,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    IEnumerator StartTimer(float timeToAdd)
+    IEnumerator StartTimer()
     {
         isTimerRunning = true;
         // Simpan waktu awal
