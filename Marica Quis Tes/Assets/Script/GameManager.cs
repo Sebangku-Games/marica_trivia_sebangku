@@ -301,6 +301,7 @@ public class GameManager : MonoBehaviour
             {
                 timerText.color = timerAlmostOutColor;
             }
+            Debug.Log("Time Left : "+ timeLeft);
 
             timerText.text = timeLeft.ToString();
             yield return new WaitForSeconds(1.0f);

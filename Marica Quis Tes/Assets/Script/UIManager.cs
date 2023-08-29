@@ -254,6 +254,7 @@ public class UIManager : MonoBehaviour
     public void AddTimeAndReduceScore()
     {
         float additionalTime = 30f;
+        gameManager.UpdateTimer(false);
         // Tambah waktu sebanyak 30 detik
         gameManager.UpdateTimer(true, additionalTime);
 
