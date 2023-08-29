@@ -251,18 +251,20 @@ public class UIManager : MonoBehaviour
         uIElements.ScoreText.text = "Score: " + events.CurrentFinalScore;
     }
 
-    public void AddTimeAndReduceScore()
+    public void AddTimeAndUpdateCurrentTime()
     {
-        float additionalTime = 30f;
-        // Tambah waktu sebanyak 30 detik
-        gameManager.UpdateTimer(true, additionalTime);
+        float additionalTime = 20f; // Waktu tambahan yang ingin ditambahkan
 
-        // Kurangi skor sebanyak 10
-        events.CurrentFinalScore -= 10;
+        // Dapatkan waktu sebelumnya yang tersisa dalam timer
+        float currentTime = float.Parse(gameManager.timerText.text);
 
-        // Update UI skor
-        UpdateScoreUI();
+        // Hitung waktu baru dengan menambahkan waktu tambahan
+        float newTime = currentTime + additionalTime;
+
+        // Update teks timer dengan waktu yang baru dihitung
+        gameManager.timerText.text = newTime.ToString();
     }
+
 
 
 
