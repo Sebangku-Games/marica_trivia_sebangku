@@ -263,18 +263,33 @@ public class UIManager : MonoBehaviour
         // Update UI skor
         UpdateScoreUI();
     }
+    public void Hint1()
+    {
+        // Kurangi skor sebanyak 10
+        events.CurrentFinalScore -= 10;
 
+        // Update UI skor
+        UpdateScoreUI();
+
+        // Cari dua jawaban yang tidak benar dan nonaktifkan GameObject-nya
+        int incorrectCount = 0;
+        foreach (var answer in currentAnswers)
+        {
+            if (!answer.IsCorrect)
+            {
+                answer.gameObject.SetActive(false);
+                incorrectCount++;
+            }
+
+            // Jika sudah dua jawaban yang dinonaktifkan, keluar dari loop
+            if (incorrectCount >= 2)
+            {
+                break;
+            }
+        }
+    }
 
 
 
 
 }
-
-
-
-
-
-
-
-
-
