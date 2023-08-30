@@ -424,6 +424,7 @@ public class GameManager : MonoBehaviour
             } while (FinishedQuestions.Contains(random) || random == currentQuestion);
         }
         return random;
+
     }
 
     

@@ -124,7 +124,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateScoreUI();
         resStateParaHash = Animator.StringToHash("ScreenState");
-        
+
     }
 
     #endregion
@@ -134,7 +134,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     void UpdateQuestionUI(Pertanyaan pertanyaan)
     {
-        
+
         uIElements.QuestionInfoTextObject.text = pertanyaan.Info;
         CreateAnswers(pertanyaan);
     }
@@ -228,10 +228,11 @@ public class UIManager : MonoBehaviour
             offset -= (newAnswer.Rect.sizeDelta.y + parameters.Margins);
             uIElements.AnswersContentArea.sizeDelta = new Vector2(uIElements.AnswersContentArea.sizeDelta.x, offset * -1);
 
+            
+
             currentAnswers.Add(newAnswer);
         }
     }
-
     /// <summary>
     /// Function that is used to erase current created answers.
     /// </summary>
@@ -268,69 +269,15 @@ public class UIManager : MonoBehaviour
         // Update UI skor
         UpdateScoreUI();
     }
-    public void Hint1()
-    {
-        // Kurangi skor sebanyak 10 (sesuai dengan logika Anda)
-        events.CurrentFinalScore -= 10;
 
-        // Update UI skor
-        UpdateScoreUI();
-
-        // Hapus jawaban yang tidak benar
-        RemoveIncorrectAnswers(2);
-    }
-
-    private void RemoveIncorrectAnswers(int count)
-    {
-        List<DataJawaban> incorrectAnswers = currentAnswers.FindAll(answer => !answer.IsCorrect);
-
-        if (incorrectAnswers.Count < count)
-        {
-            Debug.LogWarning("Not enough incorrect answers to remove.");
-            return;
-        }
-
-        List<DataJawaban> correctAnswers = currentAnswers.FindAll(answer => answer.IsCorrect);
-        List<DataJawaban> answersToRemove = new List<DataJawaban>();
-
-        for (int i = 0; i < count; i++)
-        {
-            if (incorrectAnswers.Count > 0)
-            {
-                DataJawaban answerToRemove = incorrectAnswers[0];
-                answersToRemove.Add(answerToRemove);
-                currentAnswers.Remove(answerToRemove);
-                incorrectAnswers.RemoveAt(0);
-            }
-            else
-            {
-                break;
-            }
-        }
-
-
-        // Menghapus game object dari jawaban yang tidak benar
-        foreach (var answerToRemove in answersToRemove)
-        {
-            Destroy(answerToRemove.gameObject);
-        }
-
-        UpdateAnswerPositions();
-    }
-
-
-
-
-    private void UpdateAnswerPositions()
-    {
-        float offset = 0 - parameters.Margins;
-        foreach (var answer in currentAnswers)
-        {
-            answer.Rect.anchoredPosition = new Vector2(0, offset);
-            offset -= (answer.Rect.sizeDelta.y + parameters.Margins);
-        }
-
-        uIElements.AnswersContentArea.sizeDelta = new Vector2(uIElements.AnswersContentArea.sizeDelta.x, offset * -1);
-    }
-
+    
 }
+
+
+
+
+
+
+
+
+
