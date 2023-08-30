@@ -279,7 +279,18 @@ public class UIManager : MonoBehaviour
 
             int incorrectRemovedCount = 0; // Counter for removed incorrect options
 
+            // Create a new list to store active DataJawaban objects
+            List<DataJawaban> activeDataJawaban = new List<DataJawaban>();
+
             foreach (var answer in dataJawaban)
+            {
+                if (answer != null && answer.gameObject != null)
+                {
+                    activeDataJawaban.Add(answer); // Add active objects to the new list
+                }
+            }
+
+            foreach (var answer in activeDataJawaban)
             {
                 if (!correctAnswers.Contains(answer.AnswerIndex) && incorrectRemovedCount < 2)
                 {
