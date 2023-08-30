@@ -231,6 +231,7 @@ public class UIManager : MonoBehaviour
             currentAnswers.Add(newAnswer);
         }
     }
+
     /// <summary>
     /// Function that is used to erase current created answers.
     /// </summary>
@@ -267,18 +268,55 @@ public class UIManager : MonoBehaviour
         // Update UI skor
         UpdateScoreUI();
     }
+    public void Hint1()
+    {
+        // Kurangi skor sebanyak 10 (sesuai dengan logika Anda)
+        events.CurrentFinalScore -= 10;
+
+        // Update UI skor
+        UpdateScoreUI();
+
+        // Menghapus dua jawaban yang tidak benar
+        RemoveIncorrectAnswers(2);
+    }
+
+    private void RemoveIncorrectAnswers(int count)
+    {
+        List<DataJawaban> incorrectAnswers = currentAnswers.FindAll(answer => !answer.IsCorrect);
+        List<DataJawaban> correctAnswers = currentAnswers.FindAll(answer => answer.IsCorrect);
+
+        if (incorrectAnswers.Count < count)
+        {
+            Debug.LogWarning("Not enough incorrect answers to remove.");
+            return;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            DataJawaban answerToRemove = incorrectAnswers[i];
+            currentAnswers.Remove(answerToRemove);
+            Destroy(answerToRemove.gameObject);
+        }
+
+        // Kembalikan jawaban-jawaban benar ke dalam daftar jawaban yang tersisa
+        currentAnswers.AddRange(correctAnswers);
+
+        UpdateAnswerPositions();
+    }
 
 
 
 
+    private void UpdateAnswerPositions()
+    {
+        float offset = 0 - parameters.Margins;
+        foreach (var answer in currentAnswers)
+        {
+            answer.Rect.anchoredPosition = new Vector2(0, offset);
+            offset -= (answer.Rect.sizeDelta.y + parameters.Margins);
+        }
+
+        uIElements.AnswersContentArea.sizeDelta = new Vector2(uIElements.AnswersContentArea.sizeDelta.x, offset * -1);
+    }
 
 }
-
-
-
-
-
-
-
-
-

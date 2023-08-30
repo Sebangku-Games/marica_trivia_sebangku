@@ -1650,7 +1650,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 714350785}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OnHint5050ButtonPressed
+        m_MethodName: Hint1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

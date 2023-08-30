@@ -309,6 +309,12 @@ public class GameManager : MonoBehaviour
         isTimerRunning = false;
         Accept();
     }
+
+    internal Pertanyaan GetCurrentQuestion()
+    {
+        throw new NotImplementedException();
+    }
+
     IEnumerator WaitTillNextRound()
     {
         yield return new WaitForSeconds(GameUtility.ResolutionDelayTime);

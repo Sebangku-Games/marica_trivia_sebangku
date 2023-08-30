@@ -36,6 +36,7 @@ public class DataJawaban : MonoBehaviour
     public int AnswerIndex { get { return _answerIndex; } }
 
     private bool Checked = false;
+    internal bool IsCorrect;
 
     #endregion
 
@@ -77,4 +78,6 @@ public class DataJawaban : MonoBehaviour
 
         toggle.sprite = (Checked) ? checkedToggle : uncheckedToggle;
     }
+
+   
 }
