@@ -90,6 +90,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] UIManagerParameter parameters = new UIManagerParameter();
 
     private List<DataJawaban> currentAnswers = new List<DataJawaban>();
+    private List<DataJawaban> dataJawaban = new List<DataJawaban>();
     private int resStateParaHash = 0;
 
     private IEnumerator IE_DisplayTimedResolution = null;
@@ -229,7 +230,7 @@ public class UIManager : MonoBehaviour
             uIElements.AnswersContentArea.sizeDelta = new Vector2(uIElements.AnswersContentArea.sizeDelta.x, offset * -1);
 
             
-
+            dataJawaban.Add(newAnswer);
             currentAnswers.Add(newAnswer);
         }
     }
@@ -268,6 +269,25 @@ public class UIManager : MonoBehaviour
 
         // Update UI skor
         UpdateScoreUI();
+    }
+
+    public void RemoveIncorrectAnswer(){
+        if (gameManager.Questions.Length > 0 && gameManager.currentQuestion >= 0 && gameManager.currentQuestion < gameManager.Questions.Length)
+        {
+            Pertanyaan currentQuestion = gameManager.Questions[gameManager.currentQuestion];
+            List<int> correctAnswers = currentQuestion.GetCorrectAnswers();
+
+            int incorrectRemovedCount = 0; // Counter for removed incorrect options
+
+            foreach (var answer in dataJawaban)
+            {
+                if (!correctAnswers.Contains(answer.AnswerIndex) && incorrectRemovedCount < 2)
+                {
+                    answer.gameObject.SetActive(false);
+                    incorrectRemovedCount++; // Increment the counter
+                }
+            }
+        }
     }
 
     
