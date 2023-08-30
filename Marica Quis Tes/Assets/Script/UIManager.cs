@@ -276,14 +276,13 @@ public class UIManager : MonoBehaviour
         // Update UI skor
         UpdateScoreUI();
 
-        // Menghapus dua jawaban yang tidak benar
+        // Hapus jawaban yang tidak benar
         RemoveIncorrectAnswers(2);
     }
 
     private void RemoveIncorrectAnswers(int count)
     {
         List<DataJawaban> incorrectAnswers = currentAnswers.FindAll(answer => !answer.IsCorrect);
-        List<DataJawaban> correctAnswers = currentAnswers.FindAll(answer => answer.IsCorrect);
 
         if (incorrectAnswers.Count < count)
         {
@@ -291,15 +290,30 @@ public class UIManager : MonoBehaviour
             return;
         }
 
+        List<DataJawaban> correctAnswers = currentAnswers.FindAll(answer => answer.IsCorrect);
+        List<DataJawaban> answersToRemove = new List<DataJawaban>();
+
         for (int i = 0; i < count; i++)
         {
-            DataJawaban answerToRemove = incorrectAnswers[i];
-            currentAnswers.Remove(answerToRemove);
-            Destroy(answerToRemove.gameObject);
+            if (incorrectAnswers.Count > 0)
+            {
+                DataJawaban answerToRemove = incorrectAnswers[0];
+                answersToRemove.Add(answerToRemove);
+                currentAnswers.Remove(answerToRemove);
+                incorrectAnswers.RemoveAt(0);
+            }
+            else
+            {
+                break;
+            }
         }
 
-        // Kembalikan jawaban-jawaban benar ke dalam daftar jawaban yang tersisa
-        currentAnswers.AddRange(correctAnswers);
+
+        // Menghapus game object dari jawaban yang tidak benar
+        foreach (var answerToRemove in answersToRemove)
+        {
+            Destroy(answerToRemove.gameObject);
+        }
 
         UpdateAnswerPositions();
     }
