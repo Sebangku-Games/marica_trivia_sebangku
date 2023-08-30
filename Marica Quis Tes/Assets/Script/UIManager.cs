@@ -124,7 +124,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateScoreUI();
         resStateParaHash = Animator.StringToHash("ScreenState");
-        
+
     }
 
     #endregion
@@ -134,7 +134,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     void UpdateQuestionUI(Pertanyaan pertanyaan)
     {
-        
+
         uIElements.QuestionInfoTextObject.text = pertanyaan.Info;
         CreateAnswers(pertanyaan);
     }
@@ -228,6 +228,8 @@ public class UIManager : MonoBehaviour
             offset -= (newAnswer.Rect.sizeDelta.y + parameters.Margins);
             uIElements.AnswersContentArea.sizeDelta = new Vector2(uIElements.AnswersContentArea.sizeDelta.x, offset * -1);
 
+            
+
             currentAnswers.Add(newAnswer);
         }
     }
@@ -268,10 +270,7 @@ public class UIManager : MonoBehaviour
         UpdateScoreUI();
     }
 
-
-
-
-
+    
 }
 
 
