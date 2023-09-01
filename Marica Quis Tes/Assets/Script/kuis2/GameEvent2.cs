@@ -7,16 +7,16 @@ using UnityEngine;
 public class GameEvent2 : ScriptableObject
 {
     public delegate void UpdateQuestionUICallback(Pertanyaan2 pertanyaan2);
-    public UpdateQuestionUICallback UpdateQuestionUI = null;
+    public UpdateQuestionUICallback UpdateQuestionUI2 = null;
 
     public delegate void UpdateQuestionAnswerCallback(DataJawaban2 pickedAnswer);
-    public UpdateQuestionAnswerCallback UpdateQuestionAnswer = null;
+    public UpdateQuestionAnswerCallback UpdateQuestionAnswer2 = null;
 
     public delegate void DisplayResolutionScreenCallback(UIManager2.ResolutionScreenType type, int score);
-    public DisplayResolutionScreenCallback DisplayResolutionScreen = null;
+    public DisplayResolutionScreenCallback DisplayResolutionScreen2 = null;
 
     public delegate void ScoreUpdatedCallback();
-    public ScoreUpdatedCallback ScoreUpdated = null;
+    public ScoreUpdatedCallback ScoreUpdated2 = null;
 
     [HideInInspector]
     public int CurrentFinalScore = 0;

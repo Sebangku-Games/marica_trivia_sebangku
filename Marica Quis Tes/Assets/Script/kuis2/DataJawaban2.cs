@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using DataJawaban = DataJawaban2;
 
 public class DataJawaban2 : MonoBehaviour
 {
@@ -18,8 +17,7 @@ public class DataJawaban2 : MonoBehaviour
     [SerializeField] Sprite checkedToggle = null;
 
     [Header("References")]
-    [SerializeField] GameEvent2 events = null; // Update to use GameEvent2
-
+    [SerializeField] GameEvent2 events = null;
 
     private RectTransform _rect = null;
     public RectTransform Rect
@@ -42,7 +40,6 @@ public class DataJawaban2 : MonoBehaviour
 
     #endregion
 
-
     /// <summary>
     /// Function that is called to update the answer data.
     /// </summary>
@@ -51,25 +48,30 @@ public class DataJawaban2 : MonoBehaviour
         infoTextObject.text = info;
         _answerIndex = index;
     }
-
+    /// <summary>
+    /// Function that is called to reset values back to default.
+    /// </summary>
     public void Reset()
     {
         Checked = false;
         UpdateUI();
     }
-
-    
+    /// <summary>
+    /// Function that is called to switch the state.
+    /// </summary>
     public void SwitchState()
     {
         Checked = !Checked;
         UpdateUI();
 
-        if (events.UpdateQuestionAnswer != null)
+        if (events.UpdateQuestionAnswer2 != null)
         {
-            events.UpdateQuestionAnswer(this as DataJawaban2);
+            events.UpdateQuestionAnswer2(this);
         }
     }
-    
+    /// <summary>
+    /// Function that is called to update UI.
+    /// </summary>
     void UpdateUI()
     {
         if (toggle == null) return;
@@ -77,5 +79,5 @@ public class DataJawaban2 : MonoBehaviour
         toggle.sprite = (Checked) ? checkedToggle : uncheckedToggle;
     }
 
-   
+
 }

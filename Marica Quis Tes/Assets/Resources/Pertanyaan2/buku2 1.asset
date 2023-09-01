@@ -10,19 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdaca965b0063c247874f0e56c38a91f, type: 3}
-  m_Name: buku2
+  m_Name: buku2 1
   m_EditorClassIdentifier: 
-  _info: siapa yang paling Tamvan :v
-  _answers:
-  - _info: aku
-    _isCorrect: 0
-  - _info: saya
-    _isCorrect: 0
-  - _info: gw
-    _isCorrect: 0
-  - _info: chua
-    _isCorrect: 1
-  _useTimer: 1
-  _timer: 20
-  _answerType: 1
+  _info: 
+  _answers: []
+  _useTimer: 0
+  _timer: 0
+  _answerType: 0
   _addScore: 10

@@ -10,20 +10,20 @@ public class GameManager2 : MonoBehaviour
 {
     #region Variables
 
-    public UIElements uIElemets;
+    public UIElements2 uIElemets; // Reference to the UIManager script
 
     private float previousTime = 0.0f;
     private bool isTimerRunning = false;
 
-    
+
     private bool isPaused = false;
 
-    private Pertanyaan[] _questions = null;
-    public Pertanyaan[] Questions { get { return _questions; } }
+    private Pertanyaan2[] _questions = null;
+    public Pertanyaan2[] Questions { get { return _questions; } }
     private List<DataJawaban2> currentAnswers = new List<DataJawaban2>();
 
 
-    [SerializeField] GameEvent events = null;
+    [SerializeField] GameEvent2 events = null;
 
     [SerializeField] Animator timerAnimtor = null;
     [SerializeField] TextMeshProUGUI timerText = null;
@@ -31,7 +31,7 @@ public class GameManager2 : MonoBehaviour
     [SerializeField] Color timerAlmostOutColor = Color.red;
     private Color timerDefaultColor = Color.white;
 
-    private List<DataJawaban> PickedAnswers = new List<DataJawaban>();
+    private List<DataJawaban2> PickedAnswers = new List<DataJawaban2>();
     private List<int> FinishedQuestions = new List<int>();
     private int currentQuestion = 0;
 
@@ -39,7 +39,7 @@ public class GameManager2 : MonoBehaviour
 
     private IEnumerator IE_WaitTillNextRound = null;
     private IEnumerator IE_StartTimer = null;
-    public event Action <bool> GamePaused;
+    public event Action<bool> GamePaused;
 
     //private List<DataJawaban> currentAnswers = new List<DataJawaban>();
 
@@ -60,15 +60,14 @@ public class GameManager2 : MonoBehaviour
     /// </summary>
     void OnEnable()
     {
-        events.UpdateQuestionAnswer += UpdateAnswers;
+        events.UpdateQuestionAnswer2 += UpdateAnswers;
     }
     /// <summary>
     /// Function that is called when the behaviour becomes disabled
     /// </summary>
     void OnDisable()
     {
-        events.UpdateQuestionAnswer -= UpdateAnswers;
-
+        events.UpdateQuestionAnswer2 -= UpdateAnswers;
     }
 
     /// <summary>
@@ -103,13 +102,13 @@ public class GameManager2 : MonoBehaviour
     /// <summary>
     /// Function that is called to update new selected answer.
     /// </summary>
-    public void UpdateAnswers(DataJawaban newAnswer)
+    public void UpdateAnswers(DataJawaban2 newAnswer)
     {
-        if (Questions[currentQuestion].GetAnswerType == Pertanyaan.AnswerType.Single)
+        if (Questions[currentQuestion].GetAnswerType == Pertanyaan2.AnswerType.Single)
         {
             foreach (var answer in PickedAnswers)
             {
-                if (answer != newAnswer) // Perubahan ini
+                if (answer != newAnswer)
                 {
                     answer.Reset();
                 }
@@ -117,7 +116,6 @@ public class GameManager2 : MonoBehaviour
             PickedAnswers.Clear();
             PickedAnswers.Add(newAnswer);
         }
-
         else
         {
             bool alreadyPicked = PickedAnswers.Exists(x => x == newAnswer);
@@ -190,7 +188,7 @@ public class GameManager2 : MonoBehaviour
     /// </summary>
     public void EraseAnswers()
     {
-        PickedAnswers = new List<DataJawaban>();
+        PickedAnswers = new List<DataJawaban2>();
     }
 
     /// <summary>
@@ -201,9 +199,9 @@ public class GameManager2 : MonoBehaviour
         EraseAnswers();
         var question = GetRandomQuestion();
 
-        if (events.UpdateQuestionUI != null)
+        if (events.UpdateQuestionUI2 != null)
         {
-            events.UpdateQuestionUI(question);
+            events.UpdateQuestionUI2(question);
         }
         else { Debug.LogWarning("Ups! Something went wrong while trying to display new Question UI Data. GameEvents.UpdateQuestionUI is null. Issue occured in GameManager.Display() method."); }
 
@@ -238,9 +236,9 @@ public class GameManager2 : MonoBehaviour
             : (isCorrect) ? UIManager.ResolutionScreenType.Correct
             : UIManager.ResolutionScreenType.Incorrect;
 
-        if (events.DisplayResolutionScreen != null)
+        if (events.DisplayResolutionScreen2 != null)
         {
-            events.DisplayResolutionScreen(type, Questions[currentQuestion].AddScore);
+            events.DisplayResolutionScreen2((UIManager2.ResolutionScreenType)type, Questions[currentQuestion].AddScore);
         }
 
         AudioManager.Instance.PlaySound((isCorrect) ? "CorrectSFX" : "IncorrectSFX");
@@ -303,7 +301,7 @@ public class GameManager2 : MonoBehaviour
             {
                 timerText.color = timerAlmostOutColor;
             }
-            Debug.Log("Time Left : "+ timeLeft);
+            Debug.Log("Time Left : " + timeLeft);
 
             timerText.text = timeLeft.ToString();
             yield return new WaitForSeconds(1.0f);
@@ -312,7 +310,7 @@ public class GameManager2 : MonoBehaviour
         Accept();
     }
 
-    internal Pertanyaan GetCurrentQuestion()
+    internal Pertanyaan2 GetCurrentQuestion()
     {
         throw new NotImplementedException();
     }
@@ -359,11 +357,11 @@ public class GameManager2 : MonoBehaviour
     /// </summary>
     void LoadQuestions()
     {
-        System.Object[] objs = Resources.LoadAll("Pertanyaans2", typeof(Pertanyaan2));
-        _questions = new Pertanyaan[objs.Length];
+        System.Object[] objs = Resources.LoadAll("Pertanyaan2", typeof(Pertanyaan2));
+        _questions = new Pertanyaan2[objs.Length];
         for (int i = 0; i < objs.Length; i++)
         {
-            _questions[i] = (Pertanyaan)objs[i];
+            _questions[i] = (Pertanyaan2)objs[i];
         }
     }
 
@@ -400,22 +398,21 @@ public class GameManager2 : MonoBehaviour
     {
         events.CurrentFinalScore += add;
 
-        if (events.ScoreUpdated != null)
+        if (events.ScoreUpdated2 != null)
         {
-            events.ScoreUpdated();
+            events.ScoreUpdated2();
         }
     }
 
     #region Getters
 
-    Pertanyaan GetRandomQuestion()
+    Pertanyaan2 GetRandomQuestion()
     {
-        var randomIndex = GetRandomQuestionIndex(); // This might be causing the issue
+        var randomIndex = GetRandomQuestionIndex();
         currentQuestion = randomIndex;
 
         return Questions[currentQuestion];
     }
-
     int GetRandomQuestionIndex()
     {
         var random = 0;
@@ -427,11 +424,14 @@ public class GameManager2 : MonoBehaviour
             } while (FinishedQuestions.Contains(random) || random == currentQuestion);
         }
         return random;
+
     }
 
 
 
-}
 
+
+
+}
 #endregion
 
