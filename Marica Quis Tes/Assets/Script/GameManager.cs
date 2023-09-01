@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public Pertanyaan[] Questions { get { return _questions; } }
     private List<DataJawaban> currentAnswers = new List<DataJawaban>();
 
-
     [SerializeField] GameEvent events = null;
 
     [SerializeField] Animator timerAnimtor = null;
@@ -33,9 +32,10 @@ public class GameManager : MonoBehaviour
 
     private List<DataJawaban> PickedAnswers = new List<DataJawaban>();
     private List<int> FinishedQuestions = new List<int>();
-    private int currentQuestion = 0;
+    public int currentQuestion = 0;
 
     private int timerStateParaHash = 0;
+    public bool isCorrect;
 
     private IEnumerator IE_WaitTillNextRound = null;
     private IEnumerator IE_StartTimer = null;
@@ -220,7 +220,7 @@ public class GameManager : MonoBehaviour
     public void Accept()
     {
         UpdateTimer(false);
-        bool isCorrect = CheckAnswers();
+        isCorrect = CheckAnswers();
         FinishedQuestions.Add(currentQuestion);
 
         UpdateScore((isCorrect) ? Questions[currentQuestion].AddScore : -Questions[currentQuestion].AddScore);
@@ -301,7 +301,7 @@ public class GameManager : MonoBehaviour
             {
                 timerText.color = timerAlmostOutColor;
             }
-            Debug.Log("Time Left : "+ timeLeft);
+            // Debug.Log("Time Left : "+ timeLeft);
 
             timerText.text = timeLeft.ToString();
             yield return new WaitForSeconds(1.0f);
@@ -326,7 +326,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Function that is called to check currently picked answers and return the result.
     /// </summary>
-    bool CheckAnswers()
+    public bool CheckAnswers()
     {
         if (!CompareAnswers())
         {
