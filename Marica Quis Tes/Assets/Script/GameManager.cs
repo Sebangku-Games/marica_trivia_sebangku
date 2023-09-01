@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,8 +19,7 @@ public class GameManager : MonoBehaviour
     
     private bool isPaused = false;
 
-    private Pertanyaan[] _questions = null;
-    public Pertanyaan[] Questions { get { return _questions; } }
+    public Data data = new Data();
     private List<DataJawaban> currentAnswers = new List<DataJawaban>();
 
     [SerializeField] GameEvent events = null;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return (FinishedQuestions.Count < Questions.Length) ? false : true;
+            return (FinishedQuestions.Count < data.pertanyaans.Length) ? false : true;
         }
     }
 
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         events.StartupHighscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
 
         timerDefaultColor = timerText.color;
-        LoadQuestions();
+        LoadData();
 
         timerStateParaHash = Animator.StringToHash("TimerState");
 
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void UpdateAnswers(DataJawaban newAnswer)
     {
-        if (Questions[currentQuestion].GetAnswerType == Pertanyaan.AnswerType.Single)
+        if (data.pertanyaans[currentQuestion].Type == AnswerType.Single)
         {
             foreach (var answer in PickedAnswers)
             {
@@ -223,10 +223,15 @@ public class GameManager : MonoBehaviour
         isCorrect = CheckAnswers();
         FinishedQuestions.Add(currentQuestion);
 
-        UpdateScore((isCorrect) ? Questions[currentQuestion].AddScore : -Questions[currentQuestion].AddScore);
+        UpdateScore((isCorrect) ? data.pertanyaans[currentQuestion].AddScore : -data.pertanyaans[currentQuestion].AddScore);
 
         if (IsFinished)
         {
+            //events.level++; //nambah level
+            if(events.level > GameEvent.maxLevel)
+            {
+                events.level = 1;
+            }
             SetHighscore();
         }
 
@@ -238,7 +243,7 @@ public class GameManager : MonoBehaviour
 
         if (events.DisplayResolutionScreen != null)
         {
-            events.DisplayResolutionScreen(type, Questions[currentQuestion].AddScore);
+            events.DisplayResolutionScreen(type, data.pertanyaans[currentQuestion].AddScore);
         }
 
         AudioManager.Instance.PlaySound((isCorrect) ? "CorrectSFX" : "IncorrectSFX");
@@ -282,7 +287,7 @@ public class GameManager : MonoBehaviour
         isTimerRunning = true;
         // Simpan waktu awal
         //var timeLeft = originalTime;
-        var totalTime = Questions[currentQuestion].Timer;
+        var totalTime = data.pertanyaans[currentQuestion].Timer;
         //var timeLeft = totalTime;
         var timeLeft = (previousTime > 0.0f) ? previousTime : totalTime;
 
@@ -335,7 +340,7 @@ public class GameManager : MonoBehaviour
     {
         if (PickedAnswers.Count > 0)
         {
-            List<int> c = Questions[currentQuestion].GetCorrectAnswers();
+            List<int> c = data.pertanyaans[currentQuestion].GetCorrectAnswers();
             List<int> p = PickedAnswers.Select(x => x.AnswerIndex).ToList();
 
             var f = c.Except(p).ToList();
@@ -349,14 +354,10 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Function that is called to load all questions from the Resource folder.
     /// </summary>
-    void LoadQuestions()
+    void LoadData()
     {
-        System.Object[] objs = Resources.LoadAll("Pertanyaans", typeof(Pertanyaan));
-        _questions = new Pertanyaan[objs.Length];
-        for (int i = 0; i < objs.Length; i++)
-        {
-            _questions[i] = (Pertanyaan)objs[i];
-        }
+        var path = Path.Combine(GameUtility.fileDir, GameUtility.fileName + events.level + ".xml");
+        data = Data.Fetch(path);
     }
 
     /// <summary>
@@ -391,6 +392,10 @@ public class GameManager : MonoBehaviour
     private void UpdateScore(int add)
     {
         events.CurrentFinalScore += add;
+        if(events.CurrentFinalScore > 0)
+        {
+            events.CurrentFinalScore = 0;
+        }
 
         if (events.ScoreUpdated != null)
         {
@@ -405,16 +410,16 @@ public class GameManager : MonoBehaviour
         var randomIndex = GetRandomQuestionIndex();
         currentQuestion = randomIndex;
 
-        return Questions[currentQuestion];
+        return data.pertanyaans[currentQuestion];
     }
     int GetRandomQuestionIndex()
     {
         var random = 0;
-        if (FinishedQuestions.Count < Questions.Length)
+        if (FinishedQuestions.Count < data.pertanyaans.Length)
         {
             do
             {
-                random = UnityEngine.Random.Range(0, Questions.Length);
+                random = UnityEngine.Random.Range(0, data.pertanyaans.Length);
             } while (FinishedQuestions.Contains(random) || random == currentQuestion);
         }
         return random;

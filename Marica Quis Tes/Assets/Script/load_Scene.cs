@@ -30,4 +30,7 @@ public class load_Scene : MonoBehaviour
     {
         Application.LoadLevel(scene);
     }
+
+    
+
 }

@@ -18,6 +18,9 @@ public class GameEvent : ScriptableObject
     public delegate void ScoreUpdatedCallback();
     public ScoreUpdatedCallback ScoreUpdated = null;
 
+    public int level = 1;
+    public const int maxLevel = 8;
+
     [HideInInspector]
     public int CurrentFinalScore = 0;
     [HideInInspector]
