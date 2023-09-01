@@ -342,9 +342,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1741193963}
+      - m_Target: {fileID: 623582010}
         m_TargetAssemblyTypeName: load_Scene, Assembly-CSharp
-        m_MethodName: scene
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -801,6 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiSpinButton: {fileID: 638978866}
+  play: {fileID: 396607049}
   uiSpinText: {fileID: 633629375}
   popUp: {fileID: 2145719428}
   labelGet: {fileID: 479030075}
@@ -1229,12 +1230,28 @@ PrefabInstance:
       value: Buku8
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[0].Chance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[2].Chance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[3].Chance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[4].Chance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[5].Amount
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[5].Chance
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[6].Amount
@@ -1242,7 +1259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[6].Chance
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[7].Amount
@@ -1250,7 +1267,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[7].Chance
-      value: 10
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[0].SceneName
+      value: kuis1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[1].SceneName
+      value: kuis2
       objectReference: {fileID: 0}
     - target: {fileID: 224511889338460380, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: m_Pivot.x

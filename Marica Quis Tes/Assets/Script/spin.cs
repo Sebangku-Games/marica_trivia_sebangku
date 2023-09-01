@@ -8,6 +8,7 @@ using TMPro;
 public class spin : MonoBehaviour
 {
     [SerializeField] private Button uiSpinButton;
+    [SerializeField] private Button play;
     [SerializeField] private TextMeshProUGUI uiSpinText;
     [SerializeField] private GameObject popUp;
     [SerializeField] private TextMeshProUGUI labelGet;
@@ -33,6 +34,19 @@ public class spin : MonoBehaviour
                 labelGet.text = (wheelPiece.Label);
                 uiSpinButton.interactable = true;
                 uiSpinText.text = "Spin Again!";
+
+                // Aktifkan tombol pada popup dan tambahkan listener untuk tombol
+                
+                play = popUp.GetComponentInChildren<Button>();
+                play.onClick.AddListener(() =>
+                {
+                    // Pindah ke scene yang sesuai dengan WheelPiece
+                    string sceneName = wheelPiece.SceneName;
+                    if (!string.IsNullOrEmpty(sceneName))
+                    {
+                        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+                    }
+                });
             });
 
             pickerWheel.Spin();
@@ -40,7 +54,7 @@ public class spin : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void pindah()
     {
         
     }

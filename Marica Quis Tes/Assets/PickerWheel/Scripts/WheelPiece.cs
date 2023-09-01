@@ -14,5 +14,6 @@ namespace EasyUI.PickerWheelUI {
 
       [HideInInspector] public int Index ;
       [HideInInspector] public double _weight = 0f ;
-   }
+      public string SceneName;
+    }
 }
