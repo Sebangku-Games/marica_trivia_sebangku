@@ -1756,7 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad775f1602ebe5647bd3b33e23e1249d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 714350788}
+  gameManager2: {fileID: 714350788}
   events: {fileID: 11400000, guid: f10537cfe5b5cc040bbd58128546dd5d, type: 2}
   answerPrefab: {fileID: -3734159476871280322, guid: e6b1c56fe4c217d479a8c018d96808bd, type: 3}
   uIElements:
@@ -1772,10 +1772,10 @@ MonoBehaviour:
     finishUIElements: {fileID: 1845605508}
     hintButton: {fileID: 678665361}
   parameters:
-    margins: 0
-    correctBGColor: {r: 0, g: 0, b: 0, a: 0}
-    incorrectBGColor: {r: 0, g: 0, b: 0, a: 0}
-    finalBGColor: {r: 0, g: 0, b: 0, a: 0}
+    margins: 15
+    correctBGColor: {r: 0.9372549, g: 0, b: 0, a: 0}
+    incorrectBGColor: {r: 1, g: 0, b: 0, a: 0}
+    finalBGColor: {r: 0, g: 1, b: 0, a: 0}
 --- !u!114 &714350788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1800,7 +1800,7 @@ MonoBehaviour:
     mainCanvasGroup: {fileID: 0}
     finishUIElements: {fileID: 0}
     hintButton: {fileID: 0}
-  events: {fileID: 11400000, guid: a18b8080ed52a3a48b704b8b1124b4aa, type: 2}
+  events: {fileID: 11400000, guid: f10537cfe5b5cc040bbd58128546dd5d, type: 2}
   timerAnimtor: {fileID: 53247800}
   timerText: {fileID: 771710194}
   timerHalfWayOutColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
