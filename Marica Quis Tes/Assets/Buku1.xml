@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<Data xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <pertanyaans>
+    <Pertanyaan>
+      <Info>Alat tukar yang digunakan dalam proses jual-beli disebut… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Barter</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Surat</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Timbangan</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Uang </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Euro memiliki lambang yang sering digunakan di depan nominal. Lambang tersebut adalah… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Rp</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>$</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>€</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>¥</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Yang berwenang mengeluarkan dan mengatur mata uang Rupiah di Indonesia adalah…</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Bank Dunia </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bank Internasional </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bank Sentral Indonesia (BI) </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bank Nasional Indonesia (BNI) </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Di negara manakah yang mengalami hiperinflasi sehingga pemerintahnya mengeluarkan pecahan uang 100 Triliun? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Zimbabwe</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Nigeria</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Madagaskar</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Burundi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Pada tahun berapa Indonesia mengalami krisis moneter? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Soeharto</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>B.J. Habibie </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Abdurrahman Wahid </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Megawati</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Iuran yang dilakukan oleh pemerintah dari masyarakat untuk peningkatan kualitas berbagai aspek di Indonesia disebut… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Tabungan</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Pajak</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Kas</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Deposit</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Siapa orang terkaya di dunia menurut Forbes pada tahun 2023? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Elon Musk </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bill Gates </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Jeff Bezos </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bernard Arnault </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Sistem transaksi tukar menukar barang disebut…</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Menabung</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Ritel</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Kredit</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Barter</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Bagaimana uang mempermudah proses transaksi yang sulit dalam sistem barter? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Uang membuat semua barang bernilai sama </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Uang memungkinkan terjadinya perdagangan internasional </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Uang memungkinkan pembagian barang menjadi unit yang lebih kecil </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Uang membuat semua barang menjadi langka </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Cara manual untuk mengecek keaslian uang adalah…</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Dilihat, diraba, diterawang </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Dilihat, diterawang, dijual </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Diraba, diterawang, dijemur </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Diraba, diterawang, digunting </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Apa tujuan utama dari kegiatan menabung? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Membeli barang-barang mewah </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menciptakan hutang </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menghasilkan inflasi </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menciptakan cadangan dana untuk masa depan </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Lembaga untuk menabung uang, meminjam uang, dan mengatur segala bentuk  keuangan di negara disebut… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Koperasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bank</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>BPK</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>DPR</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Pada saat terjadi inflasi, nilai tukar Rupiah pada 1 US Dollar adalah… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Rp 11.200 </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Rp 11.300 </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Rp 12.100 </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Rp 12.200 </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Pound sterling adalah mata uang dari negara… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Inggris</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Singapura</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Cina</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Amerika Serikat </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Siapa Presiden Indonesia yang berhasil menjinakkan rupiah pada saat krisis moneter? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Soeharto</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>B.J. Habibie </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Abdurrahman Wahid </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Megawati</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+  </pertanyaans>
+</Data>
