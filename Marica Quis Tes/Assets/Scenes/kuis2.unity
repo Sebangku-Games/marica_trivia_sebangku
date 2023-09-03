@@ -879,7 +879,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 714350783}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Accept
         m_Mode: 1
@@ -1400,7 +1400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &643049428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1477,7 +1477,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 714350783}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: TogglePauseButton
         m_Mode: 1
@@ -1648,9 +1648,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 714350785}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Hint1
+        m_MethodName: RemoveIncorrectAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1707,9 +1707,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 714350784}
-  - component: {fileID: 714350788}
-  - component: {fileID: 714350787}
+  - component: {fileID: 714350783}
+  - component: {fileID: 714350785}
   - component: {fileID: 714350786}
+  - component: {fileID: 714350787}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1717,6 +1718,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &714350783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714350781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4a7131d901a5143bb7764e20b7f094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIElemets:
+    answersContentArea: {fileID: 0}
+    questionInfoTextObject: {fileID: 0}
+    scoreText: {fileID: 0}
+    resolutionScreenAnimator: {fileID: 0}
+    resolutionBG: {fileID: 0}
+    resolutionStateInfoText: {fileID: 0}
+    resolutionScoreText: {fileID: 0}
+    highScoreText: {fileID: 0}
+    mainCanvasGroup: {fileID: 0}
+    finishUIElements: {fileID: 0}
+    hintButton: {fileID: 0}
+  events: {fileID: 11400000, guid: a18b8080ed52a3a48b704b8b1124b4aa, type: 2}
+  timerAnimtor: {fileID: 53247800}
+  timerText: {fileID: 771710194}
+  timerHalfWayOutColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  timerAlmostOutColor: {r: 1, g: 0, b: 0, a: 1}
+  currentQuestion: 0
+  isCorrect: 0
 --- !u!4 &714350784
 Transform:
   m_ObjectHideFlags: 0
@@ -1732,6 +1764,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &714350785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714350781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83ae088c6dce5448ac04b6cfab88f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 714350783}
+  events: {fileID: 11400000, guid: a18b8080ed52a3a48b704b8b1124b4aa, type: 2}
+  answerPrefab: {fileID: 8945324550499257199, guid: eac3ca3c8a4a9314daba7311d8f14755, type: 3}
+  uIElements:
+    answersContentArea: {fileID: 84240058}
+    questionInfoTextObject: {fileID: 1367095824}
+    scoreText: {fileID: 218524947}
+    resolutionScreenAnimator: {fileID: 207954300}
+    resolutionBG: {fileID: 207954297}
+    resolutionStateInfoText: {fileID: 2136136925}
+    resolutionScoreText: {fileID: 370779806}
+    highScoreText: {fileID: 15881097}
+    mainCanvasGroup: {fileID: 1774259464}
+    finishUIElements: {fileID: 1845605508}
+    hintButton: {fileID: 678665361}
+  parameters:
+    margins: 15
+    correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 1}
+    incorrectBGColor: {r: 1, g: 0.18396229, b: 0.18396229, a: 0}
+    finalBGColor: {r: 0.44705883, g: 0.827451, b: 0.827451, a: 0.5254902}
 --- !u!114 &714350786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,58 +1817,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 714350781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad775f1602ebe5647bd3b33e23e1249d, type: 3}
+  m_Script: {fileID: 11500000, guid: ae4f6a65013347444b70709e541eb52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager2: {fileID: 714350788}
-  events: {fileID: 11400000, guid: f10537cfe5b5cc040bbd58128546dd5d, type: 2}
-  answerPrefab: {fileID: -3734159476871280322, guid: e6b1c56fe4c217d479a8c018d96808bd, type: 3}
-  uIElements:
-    answersContentArea: {fileID: 84240058}
-    questionInfoTextObject: {fileID: 1367095824}
-    scoreText: {fileID: 218524947}
-    resolutionScreenAnimator: {fileID: 207954300}
-    resolutionBG: {fileID: 207954297}
-    resolutionStateInfoText: {fileID: 2136136925}
-    resolutionScoreText: {fileID: 370779806}
-    highScoreText: {fileID: 15881097}
-    mainCanvasGroup: {fileID: 1774259464}
-    finishUIElements: {fileID: 1845605508}
-    hintButton: {fileID: 678665361}
-  parameters:
-    margins: 15
-    correctBGColor: {r: 0.9372549, g: 0, b: 0, a: 0}
-    incorrectBGColor: {r: 1, g: 0, b: 0, a: 0}
-    finalBGColor: {r: 0, g: 1, b: 0, a: 0}
---- !u!114 &714350788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714350781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c40a7accc7dedb4aa173511f3fda5fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uIElemets:
-    answersContentArea: {fileID: 0}
-    questionInfoTextObject: {fileID: 0}
-    scoreText: {fileID: 0}
-    resolutionScreenAnimator: {fileID: 0}
-    resolutionBG: {fileID: 0}
-    resolutionStateInfoText: {fileID: 0}
-    resolutionScoreText: {fileID: 0}
-    highScoreText: {fileID: 0}
-    mainCanvasGroup: {fileID: 0}
-    finishUIElements: {fileID: 0}
-    hintButton: {fileID: 0}
-  events: {fileID: 11400000, guid: f10537cfe5b5cc040bbd58128546dd5d, type: 2}
-  timerAnimtor: {fileID: 53247800}
-  timerText: {fileID: 771710194}
-  timerHalfWayOutColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  timerAlmostOutColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &765861375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,7 +2248,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 714350783}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -3552,7 +3567,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 714350783}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -3852,7 +3867,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 714350785}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: AddTimeAndReduceScore
         m_Mode: 1

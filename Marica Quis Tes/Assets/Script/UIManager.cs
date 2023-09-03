@@ -201,10 +201,13 @@ public class UIManager : MonoBehaviour
     /// </summary>
     IEnumerator CalculateScore()
     {
+        if (events.CurrentFinalScore == 0) { uIElements.ResolutionScoreText.text = 0.ToString(); yield break; }
+
         var scoreValue = 0;
-        while (scoreValue < events.CurrentFinalScore)
+        var scoreMoreThanZero = events.CurrentFinalScore > 0;
+        while (scoreMoreThanZero ? scoreValue < events.CurrentFinalScore : scoreValue > events.CurrentFinalScore)
         {
-            scoreValue++;
+            scoreValue += scoreMoreThanZero ? 1 : -1;
             uIElements.ResolutionScoreText.text = scoreValue.ToString();
 
             yield return null;
@@ -272,9 +275,9 @@ public class UIManager : MonoBehaviour
     }
 
     public void RemoveIncorrectAnswer(){
-        if (gameManager.Questions.Length > 0 && gameManager.currentQuestion >= 0 && gameManager.currentQuestion < gameManager.Questions.Length)
+        if (gameManager.data.pertanyaans.Length > 0 && gameManager.currentQuestion >= 0 && gameManager.currentQuestion < gameManager.data.pertanyaans.Length)
         {
-            Pertanyaan currentQuestion = gameManager.Questions[gameManager.currentQuestion];
+            Pertanyaan currentQuestion = gameManager.data.pertanyaans[gameManager.currentQuestion];
             List<int> correctAnswers = currentQuestion.GetCorrectAnswers();
 
             int incorrectRemovedCount = 0; // Counter for removed incorrect options

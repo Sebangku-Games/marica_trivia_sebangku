@@ -1400,7 +1400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &643049428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1650,7 +1650,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 714350785}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Hint1
+        m_MethodName: RemoveIncorrectAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1710,6 +1710,7 @@ GameObject:
   - component: {fileID: 714350783}
   - component: {fileID: 714350785}
   - component: {fileID: 714350786}
+  - component: {fileID: 714350787}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1746,6 +1747,8 @@ MonoBehaviour:
   timerText: {fileID: 771710194}
   timerHalfWayOutColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   timerAlmostOutColor: {r: 1, g: 0, b: 0, a: 1}
+  currentQuestion: 0
+  isCorrect: 0
 --- !u!4 &714350784
 Transform:
   m_ObjectHideFlags: 0
@@ -1803,6 +1806,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 017b080aa6461cd499ddc2ed6256f0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &714350787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714350781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4f6a65013347444b70709e541eb52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &765861375
