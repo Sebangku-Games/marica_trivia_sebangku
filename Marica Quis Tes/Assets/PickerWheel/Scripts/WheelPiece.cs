@@ -1,4 +1,5 @@
 ﻿using UnityEngine ;
+using System.Xml.Serialization;
 
 namespace EasyUI.PickerWheelUI {
    [System.Serializable]
@@ -14,6 +15,7 @@ namespace EasyUI.PickerWheelUI {
 
       [HideInInspector] public int Index ;
       [HideInInspector] public double _weight = 0f ;
+      
       public string SceneName;
     }
 }

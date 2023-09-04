@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Data xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <pertanyaans>
-    <Pertanyaan>
+    <Pertanyaan1>
       <Info>tes</Info>
       <Answers>
         <Jawaban>
@@ -25,7 +25,7 @@
       <Timer>30</Timer>
       <Type>Single</Type>
       <AddScore>10</AddScore>
-    </Pertanyaan>
+    </Pertanyaan1>
     <Pertanyaan>
       <Info>tes2</Info>
       <Answers>
