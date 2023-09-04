@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     private List<DataJawaban> currentAnswers = new List<DataJawaban>();
 
     [SerializeField] GameEvent events = null;
-
+    [SerializeField] private string xmlFilePath = "Assets/Pertanyaan1.xml";
     [SerializeField] Animator timerAnimtor = null;
     [SerializeField] TextMeshProUGUI timerText = null;
     [SerializeField] Color timerHalfWayOutColor = Color.yellow;
@@ -65,6 +65,19 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Function that is called when the behaviour becomes disabled
     /// </summary>
+#if UNITY_EDITOR
+    [ContextMenu("Change XML File Path")]
+    void ChangeXmlFilePath()
+    {
+        string newPath = UnityEditor.EditorUtility.OpenFilePanel("Select XML File", "Assets", "xml");
+        if (!string.IsNullOrEmpty(newPath))
+        {
+            xmlFilePath = newPath;
+            LoadData();
+        }
+    }
+#endif
+
     void OnDisable()
     {
         events.UpdateQuestionAnswer -= UpdateAnswers;
@@ -356,9 +369,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void LoadData()
     {
-        var path = Path.Combine(GameUtility.fileDir, GameUtility.fileName + events.level + ".xml");
-        data = Data.Fetch(path);
+        data = Data.Fetch(xmlFilePath);
     }
+
 
     /// <summary>
     /// Function that is called restart the game.
@@ -432,10 +445,6 @@ public class GameManager : MonoBehaviour
 
 
 }
-
-
-
-
 
     #endregion
 
