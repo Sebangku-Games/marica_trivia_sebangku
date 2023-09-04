@@ -1742,11 +1742,10 @@ MonoBehaviour:
     mainCanvasGroup: {fileID: 0}
     finishUIElements: {fileID: 0}
     hintButton: {fileID: 0}
-    hintButton2: {fileID: 0}
   data:
     pertanyaans: []
   events: {fileID: 11400000, guid: a18b8080ed52a3a48b704b8b1124b4aa, type: 2}
-  xmlFilePath: Assets/Buku1.xml
+  xmlFilePath: Assets/Buku2.xml
   timerAnimtor: {fileID: 53247800}
   timerText: {fileID: 771710194}
   timerHalfWayOutColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -1795,7 +1794,6 @@ MonoBehaviour:
     mainCanvasGroup: {fileID: 1774259464}
     finishUIElements: {fileID: 1845605508}
     hintButton: {fileID: 678665361}
-    hintButton2: {fileID: 1931882215}
   parameters:
     margins: 15
     correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 1}
@@ -1883,7 +1881,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buku 1
+  m_text: Buku 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

@@ -61,6 +61,9 @@ public struct UIElements
 
     [SerializeField] RectTransform hintButton;
     public RectTransform HintButton { get { return hintButton; } }
+
+    [SerializeField] RectTransform hintButton2;
+    public RectTransform HintButton2 { get { return hintButton2; } }
 }
 
 
@@ -272,9 +275,12 @@ public class UIManager : MonoBehaviour
 
         // Update UI skor
         UpdateScoreUI();
+        uIElements.HintButton2.gameObject.SetActive(false);
+
     }
 
     public void RemoveIncorrectAnswer(){
+        events.CurrentFinalScore -= 10;
         if (gameManager.data.pertanyaans.Length > 0 && gameManager.currentQuestion >= 0 && gameManager.currentQuestion < gameManager.data.pertanyaans.Length)
         {
             Pertanyaan currentQuestion = gameManager.data.pertanyaans[gameManager.currentQuestion];
@@ -301,7 +307,7 @@ public class UIManager : MonoBehaviour
                     incorrectRemovedCount++; // Increment the counter
                 }
             }
-        }
+        }uIElements.HintButton.gameObject.SetActive(false);
     }
 
     
