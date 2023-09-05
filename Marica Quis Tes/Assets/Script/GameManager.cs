@@ -411,7 +411,7 @@ public class GameManager : MonoBehaviour
     private void UpdateScore(int add)
     {
         events.CurrentFinalScore += add;
-        if(events.CurrentFinalScore > 0)
+        if(events.CurrentFinalScore < 0)
         {
             events.CurrentFinalScore = 0;
         }
