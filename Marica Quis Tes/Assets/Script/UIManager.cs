@@ -61,6 +61,9 @@ public struct UIElements
 
     [SerializeField] RectTransform hintButton;
     public RectTransform HintButton { get { return hintButton; } }
+
+    [SerializeField] RectTransform hintButton2;
+    public RectTransform HintButton2 { get { return hintButton2; } }
 }
 
 
@@ -176,17 +179,17 @@ public class UIManager : MonoBehaviour
         {
             case ResolutionScreenType.Correct:
                 uIElements.ResolutionBG.color = parameters.CorrectBGColor;
-                uIElements.ResolutionStateInfoText.text = "CORRECT!";
+                uIElements.ResolutionStateInfoText.text = "Jawaban Kamu Benar!";
                 uIElements.ResolutionScoreText.text = "+" + score;
                 break;
             case ResolutionScreenType.Incorrect:
                 uIElements.ResolutionBG.color = parameters.IncorrectBGColor;
-                uIElements.ResolutionStateInfoText.text = "WRONG!";
+                uIElements.ResolutionStateInfoText.text = "Maaf, Jawaban Kamu Salah!";
                 uIElements.ResolutionScoreText.text = "-" + score;
                 break;
             case ResolutionScreenType.Finish:
                 uIElements.ResolutionBG.color = parameters.FinalBGColor;
-                uIElements.ResolutionStateInfoText.text = "FINAL SCORE";
+                uIElements.ResolutionStateInfoText.text = "Skor Akhir Kamu adalah";
 
                 StartCoroutine(CalculateScore());
                 uIElements.FinishUIElements.gameObject.SetActive(true);
@@ -272,9 +275,12 @@ public class UIManager : MonoBehaviour
 
         // Update UI skor
         UpdateScoreUI();
+        uIElements.HintButton2.gameObject.SetActive(false);
+
     }
 
     public void RemoveIncorrectAnswer(){
+        events.CurrentFinalScore -= 10;
         if (gameManager.data.pertanyaans.Length > 0 && gameManager.currentQuestion >= 0 && gameManager.currentQuestion < gameManager.data.pertanyaans.Length)
         {
             Pertanyaan currentQuestion = gameManager.data.pertanyaans[gameManager.currentQuestion];
@@ -301,7 +307,7 @@ public class UIManager : MonoBehaviour
                     incorrectRemovedCount++; // Increment the counter
                 }
             }
-        }
+        }uIElements.HintButton.gameObject.SetActive(false);
     }
 
     

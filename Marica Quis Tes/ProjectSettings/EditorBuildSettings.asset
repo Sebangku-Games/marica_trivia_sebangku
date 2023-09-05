@@ -17,15 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/kuis1.unity
     guid: 10306954a6732a84381c1af27b7f1f93
-  - enabled: 0
-    path: Assets/Scenes/books.unity
-    guid: b9fd12f28ab521340852251f40b95e54
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/spinBooks.unity
     guid: 4850a37ba0891ef47ab32ce9ae22f6c3
-  - enabled: 1
-    path: Assets/Scenes/kuis2.unity
-    guid: ad232b86d3b775f4d81b07dcc3e91413
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: ed1c602114057674593971fec9b35d84, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 648c4c9f0eaed5b4eb6f96b2b597582a, type: 2}
