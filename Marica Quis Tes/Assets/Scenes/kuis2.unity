@@ -148,7 +148,7 @@ RectTransform:
   m_GameObject: {fileID: 3209069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3050001, y: 1.4625, z: 1}
+  m_LocalScale: {x: 1.437947, y: 1.8043592, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1486765315}
@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -620, y: -1180}
+  m_AnchoredPosition: {x: 10.026978, y: 3}
+  m_SizeDelta: {x: -561.031, y: -860.968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &15881095
 GameObject:
@@ -1608,10 +1608,11 @@ MonoBehaviour:
     finishUIElements: {fileID: 0}
     hintButton: {fileID: 0}
     hintButton2: {fileID: 0}
+    popupTidak: {fileID: 0}
   data:
     pertanyaans: []
   events: {fileID: 11400000, guid: a18b8080ed52a3a48b704b8b1124b4aa, type: 2}
-  xmlFilePath: Assets/Buku2.xml
+  xmlFilePath: Assets/buku2.xml
   timerAnimtor: {fileID: 53247800}
   timerText: {fileID: 771710194}
   timerHalfWayOutColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -1661,6 +1662,7 @@ MonoBehaviour:
     finishUIElements: {fileID: 1845605508}
     hintButton: {fileID: 678665361}
     hintButton2: {fileID: 1931882215}
+    popupTidak: {fileID: 0}
   parameters:
     margins: 15
     correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 1}
@@ -2747,7 +2749,7 @@ RectTransform:
   m_GameObject: {fileID: 1486765314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0375, y: 1.025, z: 1}
+  m_LocalScale: {x: 1.0504688, y: 1.025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1728379524}
@@ -2762,7 +2764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.774, y: -6.173}
+  m_AnchoredPosition: {x: -6, y: -6.173}
   m_SizeDelta: {x: 798.471, y: 1301.033}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486765316
@@ -3468,7 +3470,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ReferenceResolution: {x: 1080, y: 2400}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
