@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Xml.Serialization;
+using System.Xml;
 
 public class GameUtility 
 {
@@ -39,6 +40,56 @@ public class Data
     public static Data Fetch(string filePath)
     {
         return Fetch(out bool result, filePath);
+    }
+
+    public static Data Fetch(TextAsset xmlAsset)
+    {
+        Data data = new Data();
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(xmlAsset.text);
+
+        XmlNodeList pertanyaanNodes = xmlDoc.SelectNodes("Data/pertanyaans/Pertanyaan");
+        List<Pertanyaan> questions = new List<Pertanyaan>();
+
+        foreach (XmlNode pertanyaanNode in pertanyaanNodes)
+        {
+            string pertanyaanInfo = pertanyaanNode.SelectSingleNode("Info").InnerText;
+            bool useTimer = bool.Parse(pertanyaanNode.SelectSingleNode("UseTimer").InnerText);
+            int timer = int.Parse(pertanyaanNode.SelectSingleNode("Timer").InnerText);
+            AnswerType type = pertanyaanNode.SelectSingleNode("Type").InnerText == "Single" 
+                ? AnswerType.Single
+                : AnswerType.Multi;
+            int addScore = int.Parse(pertanyaanNode.SelectSingleNode("AddScore").InnerText); ;
+
+            XmlNodeList jawabanNodes = pertanyaanNode.SelectNodes("Answers/Jawaban");
+            List<Jawaban> answers = new List<Jawaban>();
+
+            foreach (XmlNode jawabanNode in jawabanNodes)
+            {
+                string jawabanInfo = jawabanNode.SelectSingleNode("Info").InnerText;
+                bool isCorrect = bool.Parse(jawabanNode.SelectSingleNode("IsCorrect").InnerText);
+
+                var answer = new Jawaban();
+                answer.IsCorrect = isCorrect;
+                answer.Info = jawabanInfo;
+
+                answers.Add(answer);
+            }
+
+            var question = new Pertanyaan();
+            question.Info = pertanyaanInfo;
+            question.Answers = answers.ToArray();
+            question.Timer = timer;
+            question.AddScore = addScore;
+            question.Type = type;
+            question.UseTimer = useTimer;
+
+            questions.Add(question);
+        }
+
+        data.pertanyaans = questions.ToArray();
+        return data;
+
     }
 
     public static Data Fetch(out bool result, string filePath)
