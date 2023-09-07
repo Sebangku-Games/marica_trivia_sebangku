@@ -273,8 +273,6 @@ public class UIManager : MonoBehaviour
             // Tambah waktu sebanyak 30 detik
             gameManager.UpdateTimer(true, additionalTime);
 
-            // Tambah waktu sebanyak 30 detik
-            gameManager.UpdateTimer(true, additionalTime);
 
             // Kurangi skor sebanyak 20
             events.CurrentFinalScore -= 20;
