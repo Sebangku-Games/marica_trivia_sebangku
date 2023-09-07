@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
     private List<DataJawaban> currentAnswers = new List<DataJawaban>();
 
     [SerializeField] GameEvent events = null;
-    [SerializeField] private string xmlFilePath = "Assets/Pertanyaan1.xml";
+    [SerializeField] private string xmlFilePath = "Assets/Resources/Pertanyaan1.xml";
+    [SerializeField] private TextAsset xmlFileAsset;
     [SerializeField] Animator timerAnimtor = null;
     [SerializeField] TextMeshProUGUI timerText = null;
     [SerializeField] Color timerHalfWayOutColor = Color.yellow;
@@ -375,7 +376,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void LoadData()
     {
-        data = Data.Fetch(xmlFilePath);
+        //data = Data.Fetch(xmlFilePath);
+        data = Data.Fetch(xmlFileAsset);
     }
 
 

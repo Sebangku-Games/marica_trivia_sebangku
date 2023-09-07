@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<Data xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <pertanyaans>
+    <Pertanyaan>
+      <Info>Kata ganti kepemilikan dalam Bahasa Inggris disebut?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Possessive Pronoun</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Possessive Adjective</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Subject Pronoun</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Past Participle</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Kata bantu dalam Bahasa Inggris disebut?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>To be</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Simple Present Tense</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Irregular verbs</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Adverbs</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Ucapan salam dipagi hari dalam Bahasa Inggris yang benar adalah?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Good Evening</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Good Morning</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Good Afternoon</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Good Night</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Candi Hindu yang ada di Jawa Tengah adalah...</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Borobudur</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Candi Muara Takus</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Candi Jago</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Candi Prambanan</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Di mana Masjid Raya Syeikh Zayed yang merupakan replica dari Masjid aslinya di  Abu Dhabi berada?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Solo, Jawa Tengah</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Jakarta, DKI Jakarta</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bali, Bali</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bandung, Jawa Barat</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Negara mana yang memberikan hibah Masjid Raya Syeikh Zayed?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Brunei Darussalam</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Uni Emirat Arab</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Afghanistan</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Turki</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Di negara mana terdapat pasar terapung terkenal seperti Damnoen Saduak dan Pattaya?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Indonesia</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Malaysia</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Thailand</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Myanmar</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Siapakah penulis pertama di dunia yang dikenal dengan memasukkan detail biografi ke dalam narasinya? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Benjamin Foster</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>William Shakespeare</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Enheduanna</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Sumeria</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Siapa nama presiden ketiga Indonesia yang juga dikenal sebagai “Bapak Teknologi Indonesia”?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Megawati Soekarnoputri</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Soeharto</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Abdurrahman Wahid</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bacharuddin Jusuf Habibie</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Siapa penulis Kitab Sutasoma yang merupakan manuskrip peninggalan Kerajaan Majapahit?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Mohammad Yamin</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Hayam Wuruk</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Mpu Tantular</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bhinneka Tunggal Ika</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+  </pertanyaans>
+</Data>

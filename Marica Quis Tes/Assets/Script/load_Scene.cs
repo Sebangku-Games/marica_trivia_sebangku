@@ -26,6 +26,7 @@ public class load_Scene : MonoBehaviour
         transform.localScale = new Vector2(1 / scale, 1 * scale);
     }
 
+    [System.Obsolete]
     public void scene(string scene)
     {
         Application.LoadLevel(scene);

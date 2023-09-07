@@ -64,6 +64,9 @@ public struct UIElements
 
     [SerializeField] RectTransform hintButton2;
     public RectTransform HintButton2 { get { return hintButton2; } }
+
+    [SerializeField] RectTransform popupTidak;
+    public RectTransform PopUpTidak { get { return popupTidak; } }
 }
 
 
@@ -257,57 +260,84 @@ public class UIManager : MonoBehaviour
     /// </summary>
     void UpdateScoreUI()
     {
+        Debug.Log(uIElements.ScoreText.text = "Score: " + events.CurrentFinalScore);
         uIElements.ScoreText.text = "Score: " + events.CurrentFinalScore;
     }
 
     public void AddTimeAndReduceScore()
     {
         float additionalTime = 30f;
-        gameManager.UpdateTimer(false);
-        // Tambah waktu sebanyak 30 detik
-        gameManager.UpdateTimer(true, additionalTime);
+        if (events.CurrentFinalScore >= 20)
+        {
+            gameManager.UpdateTimer(false);
+            // Tambah waktu sebanyak 30 detik
+            gameManager.UpdateTimer(true, additionalTime);
 
-        // Tambah waktu sebanyak 30 detik
-        gameManager.UpdateTimer(true, additionalTime);
+            // Tambah waktu sebanyak 30 detik
+            gameManager.UpdateTimer(true, additionalTime);
 
-        // Kurangi skor sebanyak 10
-        events.CurrentFinalScore -= 10;
+            // Kurangi skor sebanyak 10
+            events.CurrentFinalScore -= 10;
 
-        // Update UI skor
-        UpdateScoreUI();
-        uIElements.HintButton2.gameObject.SetActive(false);
+            // Update UI skor
+            UpdateScoreUI();
+            uIElements.HintButton2.gameObject.SetActive(false);
+        }
+        else
+        {
+            StartCoroutine(ShowPopUp());
+            Debug.Log("Skor Tidak Cukup");
+        }
+        
 
     }
 
     public void RemoveIncorrectAnswer(){
-        events.CurrentFinalScore -= 10;
-        if (gameManager.data.pertanyaans.Length > 0 && gameManager.currentQuestion >= 0 && gameManager.currentQuestion < gameManager.data.pertanyaans.Length)
+        if(events.CurrentFinalScore >= 20)
         {
-            Pertanyaan currentQuestion = gameManager.data.pertanyaans[gameManager.currentQuestion];
-            List<int> correctAnswers = currentQuestion.GetCorrectAnswers();
-
-            int incorrectRemovedCount = 0; // Counter for removed incorrect options
-
-            // Create a new list to store active DataJawaban objects
-            List<DataJawaban> activeDataJawaban = new List<DataJawaban>();
-
-            foreach (var answer in dataJawaban)
+            events.CurrentFinalScore -= 10;
+            if (gameManager.data.pertanyaans.Length > 0 && gameManager.currentQuestion >= 0 && gameManager.currentQuestion < gameManager.data.pertanyaans.Length)
             {
-                if (answer != null && answer.gameObject != null)
+                Pertanyaan currentQuestion = gameManager.data.pertanyaans[gameManager.currentQuestion];
+                List<int> correctAnswers = currentQuestion.GetCorrectAnswers();
+
+                int incorrectRemovedCount = 0; // Counter for removed incorrect options
+
+                // Create a new list to store active DataJawaban objects
+                List<DataJawaban> activeDataJawaban = new List<DataJawaban>();
+
+                foreach (var answer in dataJawaban)
                 {
-                    activeDataJawaban.Add(answer); // Add active objects to the new list
+                    if (answer != null && answer.gameObject != null)
+                    {
+                        activeDataJawaban.Add(answer); // Add active objects to the new list
+                    }
+                }
+
+                foreach (var answer in activeDataJawaban)
+                {
+                    if (!correctAnswers.Contains(answer.AnswerIndex) && incorrectRemovedCount < 2)
+                    {
+                        answer.gameObject.SetActive(false);
+                        incorrectRemovedCount++; // Increment the counter
+                    }
                 }
             }
+            uIElements.HintButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            StartCoroutine(ShowPopUp());
+            Debug.Log("Skor Tidak Cukup");
+        }
+        
+    }
 
-            foreach (var answer in activeDataJawaban)
-            {
-                if (!correctAnswers.Contains(answer.AnswerIndex) && incorrectRemovedCount < 2)
-                {
-                    answer.gameObject.SetActive(false);
-                    incorrectRemovedCount++; // Increment the counter
-                }
-            }
-        }uIElements.HintButton.gameObject.SetActive(false);
+    IEnumerator ShowPopUp()
+    {
+        uIElements.PopUpTidak.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        uIElements.PopUpTidak.gameObject.SetActive(false);
     }
 
     

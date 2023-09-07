@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class DataCreator_Window : EditorWindow
 {
@@ -45,9 +46,9 @@ public class DataCreator_Window : EditorWindow
         headerRect.width -= 10;
         headerRect.y += 5;
         headerRect.height -= 10;
-        GUI.Label(headerRect, "Data to XML Creator", headerStyle);
+        GUI.Label(headerRect, "Data to Dat Creator", headerStyle);
         Rect summaryRect = new Rect(headerRect.x + 25, (headerRect.y + headerRect.height) - 20, headerRect.width - 50, 15);
-        GUI.Label(summaryRect, "Create the data that needs to be included into the XML file");
+        GUI.Label(summaryRect, "Create the data that needs to be included into the DAT file");
         #endregion
 
         #region Body Section
