@@ -333,7 +333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -236.5, y: 237.037}
+  m_AnchoredPosition: {x: -224.4, y: 218}
   m_SizeDelta: {x: -391.12, y: 84.573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &53247798
@@ -2087,7 +2087,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buku 2
+  m_text: Buku 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
   m_sharedMaterial: {fileID: -422378609679831271, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
@@ -2543,7 +2543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 242, y: -89.18}
+  m_AnchoredPosition: {x: 229.9, y: -105.6}
   m_SizeDelta: {x: 185.288, y: 60.573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031284561
@@ -3136,7 +3136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 34245e6e6ad20e145a79675e1f0a90ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90bbf15ab7250bf45aeb8234fc5325bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
