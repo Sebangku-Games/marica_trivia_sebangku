@@ -105,19 +105,19 @@
       <Info>Pada tahun berapa Indonesia mengalami krisis moneter? </Info>
       <Answers>
         <Jawaban>
-          <Info>1996</Info>
+          <Info>Soeharto</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>1997</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>1998</Info>
+          <Info>B.J. Habibie </Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>1999</Info>
+          <Info>Abdurrahman Wahid </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Megawati</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -243,6 +243,131 @@
         </Jawaban>
         <Jawaban>
           <Info>Diraba, diterawang, digunting </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Apa tujuan utama dari kegiatan menabung? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Membeli barang-barang mewah </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menciptakan hutang </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menghasilkan inflasi </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menciptakan cadangan dana untuk masa depan </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Lembaga untuk menabung uang, meminjam uang, dan mengatur segala bentuk  keuangan di negara disebut… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Koperasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bank</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>BPK</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>DPR</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Pada saat terjadi inflasi, nilai tukar Rupiah pada 1 US Dollar adalah… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Rp 11.200 </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Rp 11.300 </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Rp 12.100 </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Rp 12.200 </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Pound sterling adalah mata uang dari negara… </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Inggris</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Singapura</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Cina</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Amerika Serikat </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Siapa Presiden Indonesia yang berhasil menjinakkan rupiah pada saat krisis moneter? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Soeharto</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>B.J. Habibie </Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Abdurrahman Wahid </Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Megawati</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
