@@ -2037,7 +2037,7 @@ MonoBehaviour:
     pertanyaans: []
   events: {fileID: 11400000, guid: a18b8080ed52a3a48b704b8b1124b4aa, type: 2}
   xmlFilePath: Assets/Resources/Pertanyaan1.dat
-  xmlFileAsset: {fileID: 4900000, guid: dd0c21a5b841cd04cb26c7624ad54eb9, type: 3}
+  xmlFileAsset: {fileID: 4900000, guid: 0ebc50ba951178c4e881864e65e8c4f5, type: 3}
   timerAnimtor: {fileID: 53247800}
   timerText: {fileID: 771710194}
   timerHalfWayOutColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
