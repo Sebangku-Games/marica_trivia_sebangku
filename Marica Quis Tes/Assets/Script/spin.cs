@@ -7,6 +7,7 @@ using TMPro;
 
 public class spin : MonoBehaviour
 {
+    [SerializeField] private Image labelbuku;
     [SerializeField] private Button uiSpinButton;
     [SerializeField] private Button play;
     [SerializeField] private TextMeshProUGUI uiSpinText;
@@ -32,6 +33,8 @@ public class spin : MonoBehaviour
                 Debug.Log("Spin End: " + wheelPiece.Label + ", Amount " + wheelPiece.Amount);
                 popUp.SetActive(true);
                 labelGet.text = (wheelPiece.Label);
+                labelbuku.sprite = (wheelPiece.Icon);
+                
                 uiSpinButton.interactable = true;
                 uiSpinText.text = "Spin Again!";
 
