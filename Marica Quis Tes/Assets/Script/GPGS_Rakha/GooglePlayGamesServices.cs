@@ -39,6 +39,8 @@ public class GooglePlayGamesServices : MonoBehaviour
         SignIn();
     }
 
+#region Achievement
+
     public void ShowAchievementUI()
     {
         Social.ShowAchievementsUI();
@@ -78,5 +80,6 @@ public class GooglePlayGamesServices : MonoBehaviour
         });
     }
 
+#endregion Achievement
     
 }
