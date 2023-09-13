@@ -21,6 +21,7 @@ public class swipe_control : MonoBehaviour
         {
             posisi += 1;
             scroll_pos = pos[posisi];
+            
         }
     }
 
@@ -30,6 +31,8 @@ public class swipe_control : MonoBehaviour
         {
             posisi -= 1;
             scroll_pos = pos[posisi];
+
+            
         }
     }
 
