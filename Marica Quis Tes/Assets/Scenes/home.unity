@@ -10081,7 +10081,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1684554427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470756851}
+        m_TargetAssemblyTypeName: load_Scene, Assembly-CSharp
+        m_MethodName: scene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: kuis2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1684554427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10419,7 +10431,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1751308204}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470756851}
+        m_TargetAssemblyTypeName: load_Scene, Assembly-CSharp
+        m_MethodName: scene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: kuis1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1751308204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12081,11 +12105,11 @@ MonoBehaviour:
       Loop: 0
     Source: {fileID: 0}
   - name: GameMusic
-    clip: {fileID: 8300000, guid: dbc17ad0e63425e44985678560f21eab, type: 3}
+    clip: {fileID: 8300000, guid: 7565e06e590b3ed4a9daa2cc33c1cfbc, type: 3}
     parameters:
       Volume: 0.18
       Pitch: 1
-      Loop: 0
+      Loop: 1
     Source: {fileID: 0}
   sourcePrefab: {fileID: 82509203759054478, guid: 1725702347233174da6ccbc96895db49, type: 3}
   startupTrack: GameMusic
