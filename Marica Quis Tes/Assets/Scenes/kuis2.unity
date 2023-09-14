@@ -2177,7 +2177,6 @@ MonoBehaviour:
     correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 1}
     incorrectBGColor: {r: 1, g: 0, b: 0, a: 1}
     finalBGColor: {r: 0.44705883, g: 0.827451, b: 0.827451, a: 1}
-  correctAnswerParticles: {fileID: 1478922900}
 --- !u!114 &714350786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2248,7 +2247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buku 1
+  m_text: Buku 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
   m_sharedMaterial: {fileID: -422378609679831271, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
