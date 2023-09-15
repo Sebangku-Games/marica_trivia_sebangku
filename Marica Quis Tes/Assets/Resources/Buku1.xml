@@ -6,7 +6,7 @@
       <Answers>
         <Jawaban>
           <Info>Barter</Info>
-          <IsCorrect>true</IsCorrect>
+          <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
           <Info>Surat</Info>
@@ -18,7 +18,7 @@
         </Jawaban>
         <Jawaban>
           <Info>Uang </Info>
-          <IsCorrect>false</IsCorrect>
+          <IsCorrect>true</IsCorrect>
         </Jawaban>
       </Answers>
       <UseTimer>true</UseTimer>
@@ -102,22 +102,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Pada tahun berapa Indonesia mengalami krisis moneter? </Info>
+      <Info>Siapa Presiden Indonesia yang berhasil menjinakkan rupiah pada saat krisis moneter?</Info>
       <Answers>
         <Jawaban>
-          <Info>1996</Info>
+          <Info>Soeharto</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>1997</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>1998</Info>
+          <Info>B.J. Habibie</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>1999</Info>
+          <Info>Abdurrahman Wahid</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Megawati</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -202,23 +202,23 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Bagaimana uang mempermudah proses transaksi yang sulit dalam sistem barter? </Info>
+      <Info>Apa tujuan utama dari kegiatan menabung?</Info>
       <Answers>
         <Jawaban>
-          <Info>Uang membuat semua barang bernilai sama </Info>
+          <Info>Membeli barang-barang mewah</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menciptakan hutang</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menghasilkan inflasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menciptakan cadangan dana untuk masa depan</Info>
           <IsCorrect>true</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Uang memungkinkan terjadinya perdagangan internasional </Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Uang memungkinkan pembagian barang menjadi unit yang lebih kecil </Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Uang membuat semua barang menjadi langka </Info>
-          <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
       <UseTimer>true</UseTimer>

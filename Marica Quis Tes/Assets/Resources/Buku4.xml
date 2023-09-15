@@ -2,22 +2,22 @@
 <Data xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <pertanyaans>
     <Pertanyaan>
-      <Info>Kata ganti kepemilikan dalam Bahasa Inggris disebut?</Info>
+      <Info>Apa yang harus dilakukan apabila terkena racun?</Info>
       <Answers>
         <Jawaban>
-          <Info>Possessive Pronoun</Info>
+          <Info>Pergi ke dokter untuk minta pertolongan dan pengobatan.</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Possessive Adjective</Info>
+          <Info>Luka di diamkan saja.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Subject Pronoun</Info>
+          <Info>Bersikap panik.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Past Participle</Info>
+          <Info>Perbanyak istirahat di rumah.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -27,22 +27,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Kata bantu dalam Bahasa Inggris disebut?</Info>
+      <Info>Ada dua proses pencernaan, yaitu...</Info>
       <Answers>
         <Jawaban>
-          <Info>To be</Info>
+          <Info>Proses pencernaan mekanik dan elektrik</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Proses pencernaan mekanik dan kimiawi</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Simple Present Tense</Info>
+          <Info>Proses pencernaan kimiawi dan halus</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Irregular verbs</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Adverbs</Info>
+          <Info>Proses pencernaan besar dan kecil</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -52,22 +52,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Ucapan salam dipagi hari dalam Bahasa Inggris yang benar adalah?</Info>
+      <Info>Proses pencernaan yang dibantu oleh gigi adalah proses pencernaan?</Info>
       <Answers>
         <Jawaban>
-          <Info>Good Evening</Info>
+          <Info>Proses pencernaan kimiawi</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Good Morning</Info>
+          <Info>Proses pencernaan mekanik</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Good Afternoon</Info>
+          <Info>Proses pencernaan halus</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Good Night</Info>
+          <Info>Proses pencernaan besar</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -77,47 +77,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Candi Hindu yang ada di Jawa Tengah adalah...</Info>
+      <Info>Proses pencernaan kimiawi dibantu oleh?</Info>
       <Answers>
         <Jawaban>
-          <Info>Borobudur</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Candi Muara Takus</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Candi Jago</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Candi Prambanan</Info>
-          <IsCorrect>true</IsCorrect>
-        </Jawaban>
-      </Answers>
-      <UseTimer>true</UseTimer>
-      <Timer>30</Timer>
-      <Type>Single</Type>
-      <AddScore>10</AddScore>
-    </Pertanyaan>
-    <Pertanyaan>
-      <Info>Di mana Masjid Raya Syeikh Zayed yang merupakan replica dari Masjid aslinya di  Abu Dhabi berada?</Info>
-      <Answers>
-        <Jawaban>
-          <Info>Solo, Jawa Tengah</Info>
+          <Info>Enzim</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Jakarta, DKI Jakarta</Info>
+          <Info>Vitamin</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Bali, Bali</Info>
+          <Info>Zat besi</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Bandung, Jawa Barat</Info>
+          <Info>Lemak</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -127,22 +102,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Patung Yesus Memberkati di Tana Toraja, Indonesia, memiliki tinggi yang lebih tinggi dibandingkan dengan patung di Brazil yang bernama? </Info>
+      <Info>Hewan pemakan daging disebut…</Info>
       <Answers>
         <Jawaban>
-          <Info>Patung Yesus yang sama</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Christ the Redeemer</Info>
+          <Info>Karnivora</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Patung Dewi Athena</Info>
+          <Info>Herbivora</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Patung Buddha</Info>
+          <Info>Omnivora</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Amfibi</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -152,22 +127,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Siapa yang mencetuskan semboyan "Bhinneka Tunggal Ika"?</Info>
+      <Info>Herbivora adalah hewan pemakan?</Info>
       <Answers>
         <Jawaban>
-          <Info>Hayam Wuruk</Info>
+          <Info>Biji-bijian</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Daging</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Tumbuhan</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Mohammad Yamin</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Mpu Tantular</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Bhinneka Tunggal Ika</Info>
+          <Info>Daging dan tumbuhan</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -177,22 +152,47 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Siapakah penulis pertama di dunia yang dikenal dengan memasukkan detail biografi ke dalam narasinya? </Info>
+      <Info>Proses di mana air yang ada di laut menguap karena pemanasan dari sinar matahari disebut?</Info>
       <Answers>
         <Jawaban>
-          <Info>Benjamin Foster</Info>
+          <Info>Presipitasi</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>William Shakespeare</Info>
+          <Info>Infiltrasi</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Enheduanna</Info>
+          <Info>Kondensasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Evaporasi</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Proses awan mencair akibat suhu udara yang tinggi menyebabkan terjadinya hujan. Apa nama proses tersebut?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Presipitasi</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Sumeria</Info>
+          <Info>Infiltrasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Kondensasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Evaporasi</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -202,23 +202,23 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Apa kiasan yang sering digunakan untuk menggambarkan pentingnya membaca buku? </Info>
+      <Info>Infiltrasi dalam proses siklus air adalah…</Info>
       <Answers>
         <Jawaban>
-          <Info>"Buku adalah jendela dunia."</Info>
+          <Info>Peristiwa dimana air menjadi embun.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>"Buku adalah harta karun."</Info>
+          <Info>Peristiwa dimana air menguap.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>"Buku adalah jembatan ilmu."</Info>
+          <Info>Peristiwa dimana air pergi dari sungai ke laut.</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Peristiwa dimana air masuk ke dalam tanah.</Info>
           <IsCorrect>true</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>"Buku adalah sahabat sejati."</Info>
-          <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
       <UseTimer>true</UseTimer>
@@ -227,22 +227,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Siapa penulis Kitab Sutasoma yang merupakan manuskrip peninggalan Kerajaan Majapahit?</Info>
+      <Info>Manakah urutan empat tahap proses siklus air yang benar?</Info>
       <Answers>
         <Jawaban>
-          <Info>Mohammad Yamin</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Hayam Wuruk</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Mpu Tantular</Info>
+          <Info>Evaporasi, kondensasi, presipitasi, infiltrasi</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Bhinneka Tunggal Ika</Info>
+          <Info>Kondensasi, presipitasi, evaporasi, infiltrasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Presipitasi, infiltrasi, evaporasi, kondensasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Infiltrasi, kondensasi, evaporasi, presipitasi</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>

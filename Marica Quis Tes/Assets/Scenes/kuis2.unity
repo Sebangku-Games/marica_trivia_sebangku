@@ -2172,6 +2172,7 @@ MonoBehaviour:
     hintButton: {fileID: 678665361}
     hintButton2: {fileID: 1931882215}
     popupTidak: {fileID: 466030252}
+  correctAnswerParticles: {fileID: 0}
   parameters:
     margins: 15
     correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 1}
@@ -2247,7 +2248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buku 2
+  m_text: Baca Tulis
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
   m_sharedMaterial: {fileID: -422378609679831271, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}

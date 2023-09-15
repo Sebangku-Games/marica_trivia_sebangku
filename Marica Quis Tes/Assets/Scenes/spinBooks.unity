@@ -369,8 +369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 49}
-  m_SizeDelta: {x: 209.143, y: 227.193}
+  m_AnchoredPosition: {x: 4.376, y: 71.141}
+  m_SizeDelta: {x: 168.38, y: 182.912}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &257372316
 MonoBehaviour:
@@ -1909,11 +1909,23 @@ PrefabInstance:
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[0].Icon
       value: 
-      objectReference: {fileID: 21300000, guid: be0d38e3fab745e47ae9bd0799e54321, type: 3}
+      objectReference: {fileID: 21300000, guid: a40fafad64230cb47b22c2fcf67439eb, type: 3}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[1].Icon
       value: 
-      objectReference: {fileID: 21300000, guid: 9e6f3a68ca38e0a40b7e9cf3873e3d5f, type: 3}
+      objectReference: {fileID: 21300000, guid: 84cfe811b229f4b46b7bfe0bfc6081cd, type: 3}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[2].Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: f78d78a1bbdbc3d43812a75adf8fd62f, type: 3}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[3].Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d8d6cb458ef073f4ba7ecccdcbf37678, type: 3}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[4].Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 567bd33ff0084f04382abaa2efcfc58a, type: 3}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[5].Icon
       value: 
@@ -1928,23 +1940,23 @@ PrefabInstance:
       objectReference: {fileID: 21300008, guid: 6e980baa502e72148bbc79fb42c81d10, type: 3}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[0].Label
-      value: Literasi 1
+      value: Literasi Finansial
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[1].Label
-      value: Literasi 2
+      value: Literasi Baca Tulis
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[2].Label
-      value: Buku3
+      value: Literasi Numerasi
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[3].Label
-      value: Buku4
+      value: Literasi Sains
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[4].Label
-      value: Buku5
+      value: Literasi Digital
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[5].Label
@@ -1968,7 +1980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[2].Chance
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[3].Chance
@@ -2009,6 +2021,10 @@ PrefabInstance:
     - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: wheelPieces.Array.data[1].SceneName
       value: kuis2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361574848870256, guid: 160be82451391f6448834ec65286e007, type: 3}
+      propertyPath: wheelPieces.Array.data[2].SceneName
+      value: kuis3
       objectReference: {fileID: 0}
     - target: {fileID: 114421503001311998, guid: 160be82451391f6448834ec65286e007, type: 3}
       propertyPath: m_Color.b
@@ -3179,7 +3195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2145719429
 RectTransform:
   m_ObjectHideFlags: 0

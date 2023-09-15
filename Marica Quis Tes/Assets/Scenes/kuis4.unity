@@ -2121,7 +2121,7 @@ MonoBehaviour:
     pertanyaans: []
   events: {fileID: 11400000, guid: a18b8080ed52a3a48b704b8b1124b4aa, type: 2}
   xmlFilePath: Assets/Resources/Pertanyaan1.dat
-  xmlFileAsset: {fileID: 4900000, guid: dd0c21a5b841cd04cb26c7624ad54eb9, type: 3}
+  xmlFileAsset: {fileID: 4900000, guid: 1484d2b84a25dd2479fa3778273aa838, type: 3}
   timerAnimtor: {fileID: 53247800}
   timerText: {fileID: 771710194}
   timerHalfWayOutColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -2172,7 +2172,7 @@ MonoBehaviour:
     hintButton: {fileID: 678665361}
     hintButton2: {fileID: 1931882215}
     popupTidak: {fileID: 466030252}
-  correctAnswerParticles: {fileID: 1478922900}
+  correctAnswerParticles: {fileID: 0}
   parameters:
     margins: 15
     correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 1}
@@ -2248,7 +2248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Finansial
+  m_text: Sains
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
   m_sharedMaterial: {fileID: -422378609679831271, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
