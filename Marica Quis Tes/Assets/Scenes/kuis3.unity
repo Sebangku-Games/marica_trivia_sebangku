@@ -195,7 +195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 41}
+  m_AnchoredPosition: {x: 9, y: -79}
   m_SizeDelta: {x: 548.5693, y: 167.087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &15881097
@@ -1177,7 +1177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000013351, y: -93}
+  m_AnchoredPosition: {x: -16, y: 1}
   m_SizeDelta: {x: 677.8143, y: 350.0766}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370779806
@@ -1861,8 +1861,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 418}
-  m_SizeDelta: {x: 382.646, y: 382.646}
+  m_AnchoredPosition: {x: 0.0000038146973, y: 418}
+  m_SizeDelta: {x: 440.383, y: 382.646}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656225219
 MonoBehaviour:
@@ -1884,7 +1884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7a70524896c29934ebc1ce2ca096167b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e839b9500cdf2be4f87dabbaa6279d34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2172,7 +2172,7 @@ MonoBehaviour:
     hintButton: {fileID: 678665361}
     hintButton2: {fileID: 1931882215}
     popupTidak: {fileID: 466030252}
-  correctAnswerParticles: {fileID: 0}
+  correctAnswerParticles: {fileID: 1478922900}
   parameters:
     margins: 15
     correctBGColor: {r: 0.4198113, g: 1, b: 0.4532833, a: 1}
@@ -2248,7 +2248,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Baca Tulis
+  m_text: 'Numerasi
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
   m_sharedMaterial: {fileID: -422378609679831271, guid: ba3aecfacceb4764e8c70471341f9307, type: 2}
