@@ -206,6 +206,8 @@ public class UIManager : MonoBehaviour
                 uIElements.FinishUIElements.gameObject.SetActive(true);
                 uIElements.HighScoreText.gameObject.SetActive(true);
                 uIElements.HighScoreText.text = ((highscore > events.StartupHighscore) ? "<color=yellow>new </color>" : string.Empty) + "Highscore: " + highscore;
+                
+                GetComponent<Leaderboards>().AddScoreToLeaderboard(events.CurrentFinalScore);
                 break;
         }
     }
