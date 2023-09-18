@@ -87,12 +87,11 @@ public class SettingMenu : MonoBehaviour
             }
         }
 
-        //rotate main button arround Z axis by 180 degree starting from 0
+        // Rotate main button around Z axis by 180 degrees if the menu is expanded, otherwise, rotate back to 0 degrees
+        Vector3 targetRotation = isExpanded ? Vector3.forward * 180f : Vector3.zero;
         mainButton.transform
-              .DORotate(Vector3.forward * 180f, rotationDuration)
-              .From(Vector3.zero)
+              .DORotate(targetRotation, rotationDuration)
               .SetEase(rotationEase);
-
     }
 
     void OnDestroy()
