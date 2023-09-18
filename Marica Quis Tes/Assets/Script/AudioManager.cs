@@ -55,6 +55,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource sourcePrefab = null;
 
     [SerializeField] String startupTrack = String.Empty;
+    private bool isMuted = false;
 
     #endregion
 
@@ -73,6 +74,17 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         InitSounds();
+    }
+
+    public void ToggleMute()
+    {
+        isMuted = !isMuted; // Toggle status mute/unmute
+
+        // Mengatur volume semua audio sources sesuai dengan status mute
+        foreach (var sound in sounds)
+        {
+            sound.Source.volume = isMuted ? 0f : sound.Parameters.Volume;
+        }
     }
     /// <summary>
     /// Function that is called when the script instance is being loaded.

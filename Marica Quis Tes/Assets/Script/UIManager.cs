@@ -91,6 +91,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] DataJawaban answerPrefab = null;
 
     [SerializeField] UIElements uIElements = new UIElements();
+    [SerializeField] ParticleSystem correctAnswerParticles;
 
     [Space]
     [SerializeField] UIManagerParameter parameters = new UIManagerParameter();
@@ -184,6 +185,13 @@ public class UIManager : MonoBehaviour
                 uIElements.ResolutionBG.color = parameters.CorrectBGColor;
                 uIElements.ResolutionStateInfoText.text = "Jawaban Kamu Benar!";
                 uIElements.ResolutionScoreText.text = "+" + score;
+
+                // Mengaktifkan Particle System saat jawaban benar
+                if (correctAnswerParticles != null)
+                {
+                    correctAnswerParticles.gameObject.SetActive(true);
+                    correctAnswerParticles.Play();
+                }
                 break;
             case ResolutionScreenType.Incorrect:
                 uIElements.ResolutionBG.color = parameters.IncorrectBGColor;

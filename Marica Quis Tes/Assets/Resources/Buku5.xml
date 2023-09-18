@@ -2,22 +2,22 @@
 <Data xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <pertanyaans>
     <Pertanyaan>
-      <Info>Kata ganti kepemilikan dalam Bahasa Inggris disebut?</Info>
+      <Info>Kita bisa membeli barang secara online terpercaya dimana?</Info>
       <Answers>
         <Jawaban>
-          <Info>Possessive Pronoun</Info>
+          <Info>E-commerce.</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Possessive Adjective</Info>
+          <Info>Supermarket</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Subject Pronoun</Info>
+          <Info>Website palsu.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Past Participle</Info>
+          <Info>Mall.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -27,22 +27,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Kata bantu dalam Bahasa Inggris disebut?</Info>
+      <Info>Apa itu literasi digital?</Info>
       <Answers>
         <Jawaban>
-          <Info>To be</Info>
+          <Info>Kemampuan menggunakan media digital dengan beretika dan bertanggung jawab.</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Simple Present Tense</Info>
+          <Info>Kemampuan memilih bahan bacaan melalui aplikasi digital.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Irregular verbs</Info>
+          <Info>Kemampuan membaca di internet.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Adverbs</Info>
+          <Info>Kemampuan mencari infromasi di internet dengan bebas.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -52,22 +52,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Ucapan salam dipagi hari dalam Bahasa Inggris yang benar adalah?</Info>
+      <Info>Hoax adalah…</Info>
       <Answers>
         <Jawaban>
-          <Info>Good Evening</Info>
+          <Info>Kesalahan teknis pada komputer</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Good Morning</Info>
+          <Info>Dokumen rahasia yang dibocorkan secara online.</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Berita palsu atau informasi salah yang disebarkan.</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Good Afternoon</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Good Night</Info>
+          <Info>Kode komputer yang menghasilkan virus</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -77,47 +77,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Candi Hindu yang ada di Jawa Tengah adalah...</Info>
+      <Info>Apa yang terjadi bila kita membeli barang secara online dengan tidak hati-hati?</Info>
       <Answers>
         <Jawaban>
-          <Info>Borobudur</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Candi Muara Takus</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Candi Jago</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Candi Prambanan</Info>
-          <IsCorrect>true</IsCorrect>
-        </Jawaban>
-      </Answers>
-      <UseTimer>true</UseTimer>
-      <Timer>30</Timer>
-      <Type>Single</Type>
-      <AddScore>10</AddScore>
-    </Pertanyaan>
-    <Pertanyaan>
-      <Info>Di mana Masjid Raya Syeikh Zayed yang merupakan replica dari Masjid aslinya di  Abu Dhabi berada?</Info>
-      <Answers>
-        <Jawaban>
-          <Info>Solo, Jawa Tengah</Info>
+          <Info>Barang yang diinginkan tidak datang dan uang yang dibayarkan tidak bisa diambil.</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Jakarta, DKI Jakarta</Info>
+          <Info>Uang yang kita simpan di e-wallet tidak akan hilang.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Bali, Bali</Info>
+          <Info>Barang yang diinginkan akan datang sesuai ekspetasi dan uang akan habis.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Bandung, Jawa Barat</Info>
+          <Info>Kita tidak mudah tertipu orang jahat.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -127,22 +102,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Patung Yesus Memberkati di Tana Toraja, Indonesia, memiliki tinggi yang lebih tinggi dibandingkan dengan patung di Brazil yang bernama? </Info>
+      <Info>Website yang menjadi tempat jual beli online ditutup bisa menjadi tanda bahwa...</Info>
       <Answers>
         <Jawaban>
-          <Info>Patung Yesus yang sama</Info>
+          <Info>Website tersebut aman.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Christ the Redeemer</Info>
+          <Info>Website tersebut mendapat banyak report pengguna karena terjadi kasus penipuan.</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Patung Dewi Athena</Info>
+          <Info>Website tersebut terpercaya untuk jual beli online.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Patung Buddha</Info>
+          <Info>Website tersebut disukai banyak pembeli.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -152,22 +127,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Siapa yang mencetuskan semboyan "Bhinneka Tunggal Ika"?</Info>
+      <Info>Berpikir kritis adalah...</Info>
       <Answers>
         <Jawaban>
-          <Info>Hayam Wuruk</Info>
+          <Info>Kemampuan menyaring kebenaran suatu informasi untuk menghindari penipuan.</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Mohammad Yamin</Info>
+          <Info>Kemampuan berpikir.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Mpu Tantular</Info>
+          <Info>Kemampuan mengkritik suatu barang.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Bhinneka Tunggal Ika</Info>
+          <Info>Kemampuan memberi informasi dan saran.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -177,22 +152,47 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Siapakah penulis pertama di dunia yang dikenal dengan memasukkan detail biografi ke dalam narasinya? </Info>
+      <Info>Manakah salah satu langkah berpikir kritis yang tepat bila kita menemukan informasi </Info>
       <Answers>
         <Jawaban>
-          <Info>Benjamin Foster</Info>
+          <Info>Siapa yang menulis di kolom komentar berita?</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>William Shakespeare</Info>
+          <Info>Mengapa pembaca menulis berita?</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Enheduanna</Info>
+          <Info>Apakah gambar-gambar di berita menarik?</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Mengapa berita itu penting untuk diketahui?</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Apabila kita menjadi korban dari berita bohong, apa yang bisa kita lakukan?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Lapor polisi dan membuat video klarifikasi.</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Sumeria</Info>
+          <Info>Pasrah dan diam saja.</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menyalahkan semua orang.</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menyalahkan diri sendiri.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
@@ -202,23 +202,23 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Apa kiasan yang sering digunakan untuk menggambarkan pentingnya membaca buku? </Info>
+      <Info>Cermati judul berita ini, "Indonesia adalah Negara yang Memiliki Roket Pertama di Dunia!" Apakah berita tersebut benar atau hoax? </Info>
       <Answers>
         <Jawaban>
-          <Info>"Buku adalah jendela dunia."</Info>
+          <Info>Benar, karena berita ini mengklaim Indonesia memiliki roket pertama di dunia.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>"Buku adalah harta karun."</Info>
+          <Info>Benar, karena judul berita menyatakan fakta yang jelas.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>"Buku adalah jembatan ilmu."</Info>
+          <Info>Hoax, karena tidak mungkin Indonesia memiliki roket pertama di dunia.</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Hoax, karena tidak ada informasi tambahan atau sumber yang mendukung klaim ini</Info>
           <IsCorrect>true</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>"Buku adalah sahabat sejati."</Info>
-          <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
       <UseTimer>true</UseTimer>
@@ -227,22 +227,22 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Siapa penulis Kitab Sutasoma yang merupakan manuskrip peninggalan Kerajaan Majapahit?</Info>
+      <Info>Cermati judul berita ini, "Badak Jawa ditemukan di Taman Nasional Ujung Kulon" Apakah berita tersebut benar atau hoax? </Info>
       <Answers>
         <Jawaban>
-          <Info>Mohammad Yamin</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Hayam Wuruk</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Mpu Tantular</Info>
+          <Info>Benar, karena Taman Nasional Ujung Kulon melestarikan Badak Jawa. </Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Bhinneka Tunggal Ika</Info>
+          <Info>Benar, karena judul berita menyebutkan tentang Badak yang hidup</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Hoax, karena tidak ada taman nasional di Ujung Kulon di dunia nyata.</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Hoax, karena Badak Bercula Satu adalah hewan yang sudah punah.</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
