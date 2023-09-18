@@ -6,7 +6,8 @@ namespace EasyUI.PickerWheelUI {
       public UnityEngine.Sprite Icon ;
       public string Label ;
 
-      [Tooltip ("Reward amount")] public int Amount ;
+      
+      //[Tooltip ("Reward amount")] public int Amount ;
 
       [Tooltip ("Probability in %")] 
       [Range (0f, 100f)] 

@@ -30,7 +30,7 @@ public class spin : MonoBehaviour
 
             pickerWheel.OnSpinEnd(wheelPiece =>
             {
-                Debug.Log("Spin End: " + wheelPiece.Label + ", Amount " + wheelPiece.Amount);
+                Debug.Log("Spin End: " + wheelPiece.Label + ", Amount ");
                 popUp.SetActive(true);
                 labelGet.text = (wheelPiece.Label);
                 labelbuku.sprite = (wheelPiece.Icon);

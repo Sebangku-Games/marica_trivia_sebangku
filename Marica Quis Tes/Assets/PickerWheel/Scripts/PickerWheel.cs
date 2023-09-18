@@ -102,7 +102,7 @@ namespace EasyUI.PickerWheelUI {
 
          pieceTrns.GetChild (0).GetComponent <Image> ().sprite = piece.Icon ;
          pieceTrns.GetChild (1).GetComponent <Text> ().text = piece.Label ;
-         pieceTrns.GetChild (2).GetComponent <Text> ().text = piece.Amount.ToString () ;
+         //pieceTrns.GetChild (2).GetComponent <Text> ().text = piece.Amount.ToString () ;
 
          //Line
          Transform lineTrns = Instantiate (linePrefab, linesParent.position, Quaternion.identity, linesParent).transform ;
