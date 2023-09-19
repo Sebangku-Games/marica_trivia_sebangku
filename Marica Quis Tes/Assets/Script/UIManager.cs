@@ -277,7 +277,7 @@ public class UIManager : MonoBehaviour
     public void AddTimeAndReduceScore()
     {
         float additionalTime = 30f;
-        if (events.CurrentFinalScore >= 20)
+        if (events.CurrentFinalScore >= 10)
         {
             gameManager.UpdateTimer(false);
             // Tambah waktu sebanyak 30 detik
@@ -285,7 +285,7 @@ public class UIManager : MonoBehaviour
 
 
             // Kurangi skor sebanyak 20
-            events.CurrentFinalScore -= 20;
+            events.CurrentFinalScore -= 10;
 
             // Update UI skor
             UpdateScoreUI();
@@ -301,9 +301,9 @@ public class UIManager : MonoBehaviour
     }
 
     public void RemoveIncorrectAnswer(){
-        if(events.CurrentFinalScore >= 20)
+        if(events.CurrentFinalScore >= 10)
         {
-            events.CurrentFinalScore -= 20;
+            events.CurrentFinalScore -= 10;
             // Update UI skor
             UpdateScoreUI();
             if (gameManager.data.pertanyaans.Length > 0 && gameManager.currentQuestion >= 0 && gameManager.currentQuestion < gameManager.data.pertanyaans.Length)
