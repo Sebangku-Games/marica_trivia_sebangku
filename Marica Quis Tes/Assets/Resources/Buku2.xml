@@ -156,7 +156,7 @@
       <Answers>
         <Jawaban>
           <Info>Hayam Wuruk</Info>
-          <IsCorrect>true</IsCorrect>
+          <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
           <Info>Mohammad Yamin</Info>
@@ -164,7 +164,7 @@
         </Jawaban>
         <Jawaban>
           <Info>Mpu Tantular</Info>
-          <IsCorrect>false</IsCorrect>
+          <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
           <Info>Bhinneka Tunggal Ika</Info>
