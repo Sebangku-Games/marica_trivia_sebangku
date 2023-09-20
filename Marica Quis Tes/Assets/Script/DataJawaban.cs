@@ -65,7 +65,7 @@ public class DataJawaban : MonoBehaviour
         UpdateUI();
 
         if (events.UpdateQuestionAnswer != null)
-        {
+        {   
             events.UpdateQuestionAnswer(this);
         }
     }

@@ -197,6 +197,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void keluar()
+    {
+        SceneManager.LoadScene("home");
+    }
+
     /// <summary>
     /// Function that is called to clear PickedAnswers list.
     /// </summary>
