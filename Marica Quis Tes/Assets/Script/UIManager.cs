@@ -219,6 +219,12 @@ public class UIManager : MonoBehaviour
     {
         if (events.CurrentFinalScore == 0) { uIElements.ResolutionScoreText.text = 0.ToString(); yield break; }
 
+        // Get Achievement in score 100
+        if (events.CurrentFinalScore == 100)
+        {
+            GetComponent<Achievements>().UnlockAchievement();
+        }
+
         var scoreValue = 0;
         var scoreMoreThanZero = events.CurrentFinalScore > 0;
         while (scoreMoreThanZero ? scoreValue < events.CurrentFinalScore : scoreValue > events.CurrentFinalScore)
@@ -228,6 +234,7 @@ public class UIManager : MonoBehaviour
 
             yield return null;
         }
+
     }
 
     /// <summary>

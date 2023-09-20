@@ -39,26 +39,26 @@ public class Leaderboards : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-            var sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+            var sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
             switch(sceneIndex){
-                case 1 :
+                case "kuis1" :
                     ReportScore(score, IdFinansial);
                     break;
 
-                case 2 :
+                case "kuis2" :
                     ReportScore(score, IdBacaTulis);
                     break;
 
-                case 3 :
+                case "kuis3" :
                     ReportScore(score, IdNumerasi);
                     break;
                 
-                case 4 :
+                case "kuis4" :
                     ReportScore(score, IdSains);
                     break;
 
-                case 5 :
+                case "kuis5" :
                     ReportScore(score, IdDigital);
                     break;
             }
