@@ -29,7 +29,7 @@ public class GooglePlayGamesServices : MonoBehaviour
             else
             {
                 Debug.Log("Login Failed");
-                popupLoginFailed.SetActive(true);
+                StartCoroutine(ShowPopUpLoginFailed());
             }
         });
     }
@@ -37,5 +37,12 @@ public class GooglePlayGamesServices : MonoBehaviour
     public void SignInButton()
     {
         SignIn();
+    }
+
+    IEnumerator ShowPopUpLoginFailed()
+    {
+        popupLoginFailed.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        popupLoginFailed.SetActive(false);
     }
 }
