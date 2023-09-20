@@ -7,7 +7,7 @@ using TMPro;
 
 public class GooglePlayGamesServices : MonoBehaviour
 {
-    [SerializeField] private TMP_Text debugText;
+    [SerializeField] private GameObject popupLoginFailed;
     // create script to auto sign in user to google play games
     void Start()
     {
@@ -22,7 +22,6 @@ public class GooglePlayGamesServices : MonoBehaviour
             if (success)
             {
                 Debug.Log("Login Success");
-                debugText.text = "Login Success";
                 // unlock success login achievement
 
                 GetComponent<Achievements>().UnlockSuccessLoginAchievement();
@@ -30,7 +29,7 @@ public class GooglePlayGamesServices : MonoBehaviour
             else
             {
                 Debug.Log("Login Failed");
-                debugText.text = "Login Failed";
+                popupLoginFailed.SetActive(true);
             }
         });
     }

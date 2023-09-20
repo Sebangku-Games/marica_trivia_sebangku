@@ -11,9 +11,26 @@ public class Leaderboards : MonoBehaviour
     const string IdSains = "CgkIlO33uugJEAIQEA";
     const string IdDigital = "CgkIlO33uugJEAIQEQ";
 
+    [SerializeField] private GameObject loginPanel;
+
     public void ShowLeaderboardUI()
     {
-        Social.ShowLeaderboardUI();
+        // check if player is authenticated
+        if (!Social.localUser.authenticated)
+        {
+            // authenticate
+            Social.localUser.Authenticate(success =>
+            {
+                if (success)
+                {
+                    Social.ShowLeaderboardUI();
+                }
+                else
+                {
+                    loginPanel.SetActive(true);
+                }
+            });
+        }
     }
 
     // public void AddScoreToLeaderboard(int score)

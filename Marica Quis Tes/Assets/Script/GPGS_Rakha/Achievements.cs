@@ -16,9 +16,26 @@ public class Achievements : MonoBehaviour
     const string AIdSignInSuccess = "CgkIlO33uugJEAIQAg";
     const string AIdTestLOL = "CgkIlO33uugJEAIQAw";
 
+    [SerializeField] private GameObject loginPanel;
+
     public void ShowAchievementUI()
     {
-        Social.ShowAchievementsUI();
+        // check if player is authenticated
+        if (!Social.localUser.authenticated)
+        {
+            // authenticate
+            Social.localUser.Authenticate(success =>
+            {
+                if (success)
+                {
+                    Social.ShowAchievementsUI();
+                }
+                else
+                {
+                    loginPanel.SetActive(true);
+                }
+            });
+        }
     }
 
     // unlock achievement success login
