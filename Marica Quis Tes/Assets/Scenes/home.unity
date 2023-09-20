@@ -12742,6 +12742,7 @@ GameObject:
   - component: {fileID: 1214951483}
   - component: {fileID: 1214951482}
   - component: {fileID: 1214951484}
+  - component: {fileID: 1214951485}
   m_Layer: 0
   m_Name: GPGS
   m_TagString: Untagged
@@ -12787,6 +12788,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e2c25fda3a1f634680d435f0a21a258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1214951485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214951481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4183114027e960d44b3e19e1d233d4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1237260338
@@ -18834,8 +18847,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1214951482}
-        m_TargetAssemblyTypeName: GooglePlayGamesServices, Assembly-CSharp
+      - m_Target: {fileID: 1214951485}
+        m_TargetAssemblyTypeName: Achievements, Assembly-CSharp
         m_MethodName: ShowAchievementUI
         m_Mode: 1
         m_Arguments:

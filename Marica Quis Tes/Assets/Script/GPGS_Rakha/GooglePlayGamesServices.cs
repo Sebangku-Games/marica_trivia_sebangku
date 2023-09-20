@@ -24,7 +24,8 @@ public class GooglePlayGamesServices : MonoBehaviour
                 Debug.Log("Login Success");
                 debugText.text = "Login Success";
                 // unlock success login achievement
-                UnlockSuccessLoginAchievement();
+
+                GetComponent<Achievements>().UnlockSuccessLoginAchievement();
             }
             else
             {
@@ -38,48 +39,4 @@ public class GooglePlayGamesServices : MonoBehaviour
     {
         SignIn();
     }
-
-#region Achievement
-
-    public void ShowAchievementUI()
-    {
-        Social.ShowAchievementsUI();
-    }
-
-    // unlock achievement success login
-    public void UnlockSuccessLoginAchievement()
-    {
-        Social.ReportProgress("CgkIlO33uugJEAIQAg", 100f, success =>
-        {
-            if (success)
-            {
-                Debug.Log("Achievement Unlocked");
-                debugText.text = "Achievement Unlocked";
-            }
-            else
-            {
-                Debug.Log("Achievement Failed");
-                debugText.text = "Achievement Failed";
-            }
-        });
-    }
-
-    // unlock achievement ZETAAA UWEEEEEEEEEEEEEEEEEEE
-    public void UnlockAchievementLOL(){
-        Social.ReportProgress("CgkIlO33uugJEAIQAw", 100f, success => {
-            if (success)
-            {
-                Debug.Log("Achievement Unlocked");
-                debugText.text = "Achievement Unlocked";
-            }
-            else
-            {
-                Debug.Log("Achievement Failed");
-                debugText.text = "Achievement Failed";
-            }
-        });
-    }
-
-#endregion Achievement
-    
 }
