@@ -19,6 +19,7 @@ public class GameEvent : ScriptableObject
     public ScoreUpdatedCallback ScoreUpdated = null;
 
     public int level = 1;
+    public int nomorSoal = 0;
     public const int maxLevel = 8;
 
     [HideInInspector]

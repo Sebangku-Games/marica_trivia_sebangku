@@ -265,7 +265,16 @@ public class GameManager : MonoBehaviour
             events.DisplayResolutionScreen(type, data.pertanyaans[currentQuestion].AddScore);
         }
 
-        AudioManager.Instance.PlaySound((isCorrect) ? "CorrectSFX" : "IncorrectSFX");
+        // tambah soal tiap submit jawaban
+        events.nomorSoal++;
+
+        if(events.nomorSoal < 10){ // play correct/incorrect sfx for question no1-9
+            AudioManager.Instance.PlaySound((isCorrect) ? "CorrectSFX" : "IncorrectSFX");
+        } else { // play game end sfx for question no10
+            int randomIndex = UnityEngine.Random.Range(0, 2);
+            AudioManager.Instance.PlaySound((randomIndex == 0) ? "GameEnded" : "GameEnded2");
+        }
+
 
         if (type != UIManager.ResolutionScreenType.Finish)
         {

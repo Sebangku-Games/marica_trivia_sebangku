@@ -7,7 +7,7 @@ using System.Xml;
 
 public class GameUtility 
 {
-    public const float ResolutionDelayTime = 1;
+    public const float ResolutionDelayTime = 2;
     public const string SavePrefKey = "Game_Highscore_Value";
 
     public const string fileName = "Pertanyaan";
