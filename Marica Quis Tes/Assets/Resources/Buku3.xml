@@ -77,22 +77,47 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>2 &#43; 2 =</Info>
+      <Info>Mari mempunyai 3 cokelat, 7 cookies, dan 5 es krim. Urutkan dari yang jumlahnya paling banyak  ke paling sedikit!</Info>
       <Answers>
         <Jawaban>
-          <Info>1 &#43; 1</Info>
+          <Info>Cokelat, cookies, es krim</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>1 &#43; 2 &#43; 3</Info>
+          <Info>Cookies, es krim, cokelat</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Cokelat, es krim, cookies</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>1 &#43; 1 &#43; 3</Info>
+          <Info>Es krim, cookies, cokelat</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>2 +  2 =</Info>
+      <Answers>
+        <Jawaban>
+          <Info>1 + 1</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>1 &#43; 1 &#43; 2</Info>
+          <Info>1 +  2  +  3</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>1  +  1  +  3</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>1  +  1  +  2</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
       </Answers>
@@ -213,36 +238,11 @@
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>&#43;</Info>
+          <Info>+</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>&#61;</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-      </Answers>
-      <UseTimer>true</UseTimer>
-      <Timer>30</Timer>
-      <Type>Single</Type>
-      <AddScore>10</AddScore>
-    </Pertanyaan>
-    <Pertanyaan>
-      <Info>Mari mempunyai 3 cokelat, 7 cookies, dan 5 es krim. Urutkan dari yang jumlahnya paling banyak  ke paling sedikit!</Info>
-      <Answers>
-        <Jawaban>
-          <Info>Cokelat, cookies, es krim</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Cookies, es krim, cokelat</Info>
-          <IsCorrect>true</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Cokelat, es krim, cookies</Info>
-          <IsCorrect>false</IsCorrect>
-        </Jawaban>
-        <Jawaban>
-          <Info>Es krim, cookies, cokelat</Info>
+          <Info>=</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
