@@ -21,9 +21,12 @@ public class Achievements : MonoBehaviour
     public void ShowAchievementUI()
     {
         // check if player is authenticated
-        if (!Social.localUser.authenticated)
+        if (Social.localUser.authenticated) // player has login
         {
-            // authenticate
+            // show achievement
+            Social.ShowAchievementsUI();
+        } else { 
+            // player hasnt login, try authenticate
             Social.localUser.Authenticate(success =>
             {
                 if (success)
@@ -31,7 +34,7 @@ public class Achievements : MonoBehaviour
                     Social.ShowAchievementsUI();
                 }
                 else
-                {
+                { 
                     loginPanel.SetActive(true);
                 }
             });

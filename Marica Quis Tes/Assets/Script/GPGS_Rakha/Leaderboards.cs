@@ -16,9 +16,12 @@ public class Leaderboards : MonoBehaviour
     public void ShowLeaderboardUI()
     {
         // check if player is authenticated
-        if (!Social.localUser.authenticated)
+        if (Social.localUser.authenticated) // player has login
         {
-            // authenticate
+            // show leaderboard
+            Social.ShowLeaderboardUI();
+        } else { 
+            // player hasnt login, try authenticate
             Social.localUser.Authenticate(success =>
             {
                 if (success)
@@ -26,7 +29,7 @@ public class Leaderboards : MonoBehaviour
                     Social.ShowLeaderboardUI();
                 }
                 else
-                {
+                { 
                     loginPanel.SetActive(true);
                 }
             });
