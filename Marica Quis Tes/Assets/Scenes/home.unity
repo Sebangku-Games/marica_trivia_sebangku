@@ -10609,8 +10609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0051346, y: 660.73}
-  m_SizeDelta: {x: 848.23, y: 848.23}
+  m_AnchoredPosition: {x: 0.0051517, y: 638}
+  m_SizeDelta: {x: 1092.082, y: 1092.129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852977653
 MonoBehaviour:
@@ -10632,7 +10632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2256b616907eaec4782dbbf8a1497b50, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab41c8f312179c0478b344cc29b3e174, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22407,7 +22407,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c731e514fcb78554c8e8d19b65241c87, type: 3}
     parameters:
       Volume: 0.36
-      Pitch: 0.59
+      Pitch: 1.1
       Loop: 0
     Source: {fileID: 0}
   - name: CountdownSFX
