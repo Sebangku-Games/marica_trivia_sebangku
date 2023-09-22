@@ -241,25 +241,46 @@ public class UIManager : MonoBehaviour
     /// Function that is used to create new question answers.
     /// </summary>
     void CreateAnswers(Pertanyaan pertanyaan)
+{
+    EraseAnswers();
+
+    List<DataJawaban> shuffledAnswers = new List<DataJawaban>();
+    List<int> shuffledIndices = new List<int>();
+
+    for (int i = 0; i < pertanyaan.Answers.Length; i++)
     {
-        EraseAnswers();
-
-        float offset = 0 - parameters.Margins;
-        for (int i = 0; i < pertanyaan.Answers.Length; i++)
-        {
-            DataJawaban newAnswer = (DataJawaban)Instantiate(answerPrefab, uIElements.AnswersContentArea);
-            newAnswer.UpdateData(pertanyaan.Answers[i].Info, i);
-
-            newAnswer.Rect.anchoredPosition = new Vector2(0, offset);
-
-            offset -= (newAnswer.Rect.sizeDelta.y + parameters.Margins);
-            uIElements.AnswersContentArea.sizeDelta = new Vector2(uIElements.AnswersContentArea.sizeDelta.x, offset * -1);
-
-            
-            dataJawaban.Add(newAnswer);
-            currentAnswers.Add(newAnswer);
-        }
+        shuffledIndices.Add(i);
     }
+
+    // Shuffle the indices
+    System.Random rng = new System.Random();
+    int n = shuffledIndices.Count;
+    while (n > 1)
+    {
+        n--;
+        int k = rng.Next(n + 1);
+        int value = shuffledIndices[k];
+        shuffledIndices[k] = shuffledIndices[n];
+        shuffledIndices[n] = value;
+    }
+
+    // Create and position the answers based on the shuffled indices
+    float offset = 0 - parameters.Margins;
+    foreach (int index in shuffledIndices)
+    {
+        DataJawaban newAnswer = (DataJawaban)Instantiate(answerPrefab, uIElements.AnswersContentArea);
+        newAnswer.UpdateData(pertanyaan.Answers[index].Info, index);
+
+        newAnswer.Rect.anchoredPosition = new Vector2(0, offset);
+
+        offset -= (newAnswer.Rect.sizeDelta.y + parameters.Margins);
+        uIElements.AnswersContentArea.sizeDelta = new Vector2(uIElements.AnswersContentArea.sizeDelta.x, offset * -1);
+
+        dataJawaban.Add(newAnswer);
+        currentAnswers.Add(newAnswer);
+    }
+}
+
     /// <summary>
     /// Function that is used to erase current created answers.
     /// </summary>
