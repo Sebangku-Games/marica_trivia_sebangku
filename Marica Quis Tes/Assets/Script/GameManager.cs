@@ -109,6 +109,8 @@ public class GameManager : MonoBehaviour
         UnityEngine.Random.InitState(seed);
 
         Display();
+
+        events.nomorSoal = 0;
     }
 
     #endregion
