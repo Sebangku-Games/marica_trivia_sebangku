@@ -10,6 +10,7 @@ public class Leaderboards : MonoBehaviour
     const string IdNumerasi = "CgkIlO33uugJEAIQDw";
     const string IdSains = "CgkIlO33uugJEAIQEA";
     const string IdDigital = "CgkIlO33uugJEAIQEQ";
+    const string IdLeaderboardsOverall = "CgkIlO33uugJEAIQBA";
 
     [SerializeField] private GameObject loginPanel;
 
@@ -64,22 +65,27 @@ public class Leaderboards : MonoBehaviour
             switch(sceneIndex){
                 case "kuis1" :
                     ReportScore(score, IdFinansial);
+                    ReportScore(score, IdLeaderboardsOverall);
                     break;
 
                 case "kuis2" :
                     ReportScore(score, IdBacaTulis);
+                    ReportScore(score, IdLeaderboardsOverall);
                     break;
 
                 case "kuis3" :
                     ReportScore(score, IdNumerasi);
+                    ReportScore(score, IdLeaderboardsOverall);
                     break;
                 
                 case "kuis4" :
                     ReportScore(score, IdSains);
+                    ReportScore(score, IdLeaderboardsOverall);
                     break;
 
                 case "kuis5" :
                     ReportScore(score, IdDigital);
+                    ReportScore(score, IdLeaderboardsOverall);
                     break;
             }
         }
