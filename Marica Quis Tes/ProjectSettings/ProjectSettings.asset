@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Marica Trivia v.0.0.2
+  companyName: Sebangku Games
   productName: Marica Quis Tes
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -282,7 +282,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 03bb5fbdc080d28439384c9df7a39d63, type: 3}
+      m_Icon: {fileID: 2800000, guid: 70f3cd87ce33f8643a95134ef64c7404, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
