@@ -71,11 +71,11 @@ public class Achievements : MonoBehaviour
                 break;
 
             case "kuis4":
-                ReportProgressAchievement(AIdSains, 100f);
+                ReportProgressAchievement(AIdDigital, 100f);
                 break;
 
             case "kuis5":
-                ReportProgressAchievement(AIdDigital, 100f);
+                ReportProgressAchievement(AIdSains, 100f);
                 break;
         }
     }

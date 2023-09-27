@@ -79,12 +79,12 @@ public class Leaderboards : MonoBehaviour
                     break;
                 
                 case "kuis4" :
-                    ReportScore(score, IdSains);
+                    ReportScore(score, IdDigital);
                     ReportScore(score, IdLeaderboardsOverall);
                     break;
 
                 case "kuis5" :
-                    ReportScore(score, IdDigital);
+                    ReportScore(score, IdSains);
                     ReportScore(score, IdLeaderboardsOverall);
                     break;
             }
