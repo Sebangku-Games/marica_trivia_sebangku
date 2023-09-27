@@ -78,6 +78,7 @@ public class Achievements : MonoBehaviour
                 ReportProgressAchievement(AIdSains, 100f);
                 break;
         }
+        CheckAllLiteracyAchievement();
     }
 
     public void CheckAllLiteracyAchievement(){
