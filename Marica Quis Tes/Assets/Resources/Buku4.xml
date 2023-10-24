@@ -227,6 +227,131 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
+      <Info>Manakah yang bukan hewan omnivora berikut ini?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Ayam</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bebek</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Rakun</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Koala</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Fungsi usus halus adalah…</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Menyerap sari makanan</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menghasilkan asam klorida</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Menawarkan racun</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Mengunyah makanan</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Transportasi tradisional yang menggunakan gerobak kayu dan ditarik oleh sapi disebut?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Delman</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Andong</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Cikar</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Kereta Kencana</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Dalam mempersiapkan upacara adat, masyarakat Indonesia terkenal dengan menerapkan nilai?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Gotong royong</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Silaturahmi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Keadilan</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Ramah tamah</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Komodo ditemukan di provinsi? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>Bangka Belitung</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Surabaya</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Nusa Tenggara Timur</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Maluku</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
       <Info>Manakah urutan empat tahap proses siklus air yang benar?</Info>
       <Answers>
         <Jawaban>

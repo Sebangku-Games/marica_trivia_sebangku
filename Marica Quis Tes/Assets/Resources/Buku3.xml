@@ -251,5 +251,130 @@
       <Type>Single</Type>
       <AddScore>10</AddScore>
     </Pertanyaan>
+    <Pertanyaan>
+      <Info>Bangun datar jajar genjang memiliki … sisi.</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Empat</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Tiga</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Dua</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Satu</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Mari mempunyai 5 permen. Caca memberi 9 permen kepada Mari. Berapa permen Mari sekarang?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>12</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>13</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>14</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>15</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Mari membutuhkan 12 telur untuk membuat kue yang akan disajikan di pesta. Mari sudah mempunyai 3 telur di kulkasnya. Berapa telur lagi yang Mari butuhkan? </Info>
+      <Answers>
+        <Jawaban>
+          <Info>6</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>7</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>8</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>9</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>20 ons + 30 ons + 10 ons = …</Info>
+      <Answers>
+        <Jawaban>
+          <Info>60 ons</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>70 ons</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>80 ons</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>90 ons</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>75 kg - 15 kg + 5 kg =</Info>
+      <Answers>
+        <Jawaban>
+          <Info>40</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>55</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>60</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>65</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
   </pertanyaans>
 </Data>
