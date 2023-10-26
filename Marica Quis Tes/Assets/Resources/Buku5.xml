@@ -227,22 +227,147 @@
       <AddScore>10</AddScore>
     </Pertanyaan>
     <Pertanyaan>
-      <Info>Cermati judul berita ini, "Badak Jawa ditemukan di Taman Nasional Ujung Kulon" Apakah berita tersebut benar atau hoax? </Info>
+      <Info>Sebuah berita harus memiliki sifat faktual. Apa yang dimaksud dengan teks berita bersifat faktual? </Info>
       <Answers>
         <Jawaban>
-          <Info>Benar, karena Taman Nasional Ujung Kulon melestarikan Badak Jawa. </Info>
+          <Info>Berita berdasarkan pada kenyataan</Info>
           <IsCorrect>true</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Benar, karena judul berita menyebutkan tentang Badak yang hidup</Info>
+          <Info>Berita bersifat subjektif</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Hoax, karena tidak ada taman nasional di Ujung Kulon di dunia nyata.</Info>
+          <Info>Berita berisikan ajakan</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
         <Jawaban>
-          <Info>Hoax, karena Badak Bercula Satu adalah hewan yang sudah punah.</Info>
+          <Info>Berita berdasarkan asumsi yang ada di masyarakat</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Teks berita juga bersifat aktual. Apa yang dimaksud aktual?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Bersifat nyata</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Berdasarkan informasi terbaru</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Mengandung informasi</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Berdasarkan pendapat seseorang</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Komodo termasuk hewan dari keluarga Varanidae atau dikenal juga sebagai...</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Salamander</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Biawak</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Dinosaurus</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Buaya</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Satelit telekomunikasi pertama Indonesia disebut?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Satelit Palapa</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Satelit Bima Sakti</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Satelit Satria</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Satelit Garuda</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Tari Serimpi adalah tari tradisional dari daerah?</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Madura</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Jawa Barat</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Jawa Timur</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Jawa Tengah</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+      </Answers>
+      <UseTimer>true</UseTimer>
+      <Timer>30</Timer>
+      <Type>Single</Type>
+      <AddScore>10</AddScore>
+    </Pertanyaan>
+    <Pertanyaan>
+      <Info>Bunga khas kerajaan Mataram Islam adalah...</Info>
+      <Answers>
+        <Jawaban>
+          <Info>Bunga Kenanga</Info>
+          <IsCorrect>true</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bunga Anggrek</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bunga Melati</Info>
+          <IsCorrect>false</IsCorrect>
+        </Jawaban>
+        <Jawaban>
+          <Info>Bunga Cempaka</Info>
           <IsCorrect>false</IsCorrect>
         </Jawaban>
       </Answers>
