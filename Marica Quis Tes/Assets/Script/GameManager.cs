@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private int timerStateParaHash = 0;
     public bool isCorrect;
+    private int displayedQuestionCount = 0;
 
     private IEnumerator IE_WaitTillNextRound = null;
     private IEnumerator IE_StartTimer = null;
@@ -248,11 +249,6 @@ public class GameManager : MonoBehaviour
 
         if (IsFinished)
         {
-            //events.level++; //nambah level
-            if(events.level > GameEvent.maxLevel)
-            {
-                events.level = 1;
-            }
             SetHighscore();
         }
 
@@ -275,6 +271,7 @@ public class GameManager : MonoBehaviour
         } else { // play game end sfx for question no10
             int randomIndex = UnityEngine.Random.Range(0, 2);
             AudioManager.Instance.PlaySound((randomIndex == 0) ? "GameEnded" : "GameEnded2");
+            
         }
 
 
@@ -452,7 +449,7 @@ public class GameManager : MonoBehaviour
     int GetRandomQuestionIndex()
     {
         var random = 0;
-        if (FinishedQuestions.Count < data.pertanyaans.Length)
+        if (FinishedQuestions.Count < 10)
         {
             do
             {
